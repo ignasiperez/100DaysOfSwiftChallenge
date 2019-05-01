@@ -22,6 +22,7 @@
 		1D1AC2C12279D57800BA733F /* nssl0043.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1AC2B72279D57800BA733F /* nssl0043.png */; };
 		1D1AC2C22279D57800BA733F /* nssl0033.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1AC2B82279D57800BA733F /* nssl0033.png */; };
 		1D1AC2C32279D57800BA733F /* nssl0034.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1AC2B92279D57800BA733F /* nssl0034.png */; };
+		1DCDC14E2279E04600DC47F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCDC14D2279E04600DC47F9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1D1AC2B72279D57800BA733F /* nssl0043.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nssl0043.png; sourceTree = "<group>"; };
 		1D1AC2B82279D57800BA733F /* nssl0033.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nssl0033.png; sourceTree = "<group>"; };
 		1D1AC2B92279D57800BA733F /* nssl0034.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nssl0034.png; sourceTree = "<group>"; };
+		1DCDC14D2279E04600DC47F9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				1D1AC2A62279D4C600BA733F /* LaunchScreen.storyboard */,
 				1D1AC2A92279D4C600BA733F /* Info.plist */,
 				1D1AC2AF2279D57800BA733F /* Content */,
+				1DCDC14D2279E04600DC47F9 /* DetailViewController.swift */,
 			);
 			path = "C01A-StormViewer";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCDC14E2279E04600DC47F9 /* DetailViewController.swift in Sources */,
 				1D1AC2A02279D4C500BA733F /* ViewController.swift in Sources */,
 				1D1AC29E2279D4C500BA733F /* AppDelegate.swift in Sources */,
 			);
