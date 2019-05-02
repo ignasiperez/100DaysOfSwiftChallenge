@@ -36,6 +36,8 @@ class ViewController: UITableViewController {
             }
         }
         
+        pictures.sort()
+        
         print("\n- pictures: \(pictures)")
     }
     
@@ -81,24 +83,15 @@ class ViewController: UITableViewController {
             // 2: success! Set its selectedImage property
             vc.selectedImge = pictures[indexPath.row]
             
+            let x = indexPath.row + 1
+            vc.selectedPicturePosition = x
+            
+            let y = pictures.count
+            vc.totalPictures = y
+            
             // 3: now push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
-     
-        if let vc =
-            storyboard?.instantiateViewController(
-                withIdentifier: "Detail") as? DetailViewController {
-            // 2: success! Set its selectedImage property
-            vc.selectedImage = pictures[indexPath.row]
-            // 3: now push it onto the navigation controller
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-*/
     
 }

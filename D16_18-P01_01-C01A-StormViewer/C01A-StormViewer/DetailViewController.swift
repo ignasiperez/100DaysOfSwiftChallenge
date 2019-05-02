@@ -14,6 +14,9 @@ class DetailViewController: UIViewController {
     
     var selectedImge: String?
     
+    var selectedPicturePosition = 0
+    var totalPictures = 0
+    
     
     //  ************************************************************
     //  MARK: - Overrided methods UIViewController
@@ -21,9 +24,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("DetailViewController viewDidLoad()")
+        print("\nDetailViewController viewDidLoad()")
         
-        title = selectedImge
+        // day 16: title = selectedImage
+        // day 18 (challenge): 
+        title = "Picture \(selectedPicturePosition) of \(totalPictures)"
         
         // enum UINavigationItem.LargeTitleDisplayMode: Int
         // Enumeration Cases
@@ -33,6 +38,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let imageToLoad = selectedImge {
             imageView.image  = UIImage(named: imageToLoad)
+            print("- imageToLoad: \(imageToLoad)")
         }
     }
     
