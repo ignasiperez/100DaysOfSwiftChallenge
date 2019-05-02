@@ -12,21 +12,40 @@ class DetailViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     
+    var selectedImge: String?
+    
+    
+    //  ************************************************************
+    //  MARK: - Overrided methods UIViewController
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("DetailViewController viewDidLoad()")
+        
+        title = selectedImge
+        
+        // enum UINavigationItem.LargeTitleDisplayMode: Int
+        // Enumeration Cases
+        //  .automatic, .always, .never
+        navigationItem.largeTitleDisplayMode = .never
+        
         // Do any additional setup after loading the view.
+        if let imageToLoad = selectedImge {
+            imageView.image  = UIImage(named: imageToLoad)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    /// Notifies the view controller that its view is about to be added to a view hierarchy.
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnTap = true
     }
-    */
-
+    
+    
+    /// Notifies the view controller that its view is about to be removed from a view hierarchy.
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.hidesBarsOnTap = false
+    }
+    
 }

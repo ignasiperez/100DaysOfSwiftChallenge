@@ -78,12 +78,12 @@
 			children = (
 				1D1AC29D2279D4C500BA733F /* AppDelegate.swift */,
 				1D1AC29F2279D4C500BA733F /* ViewController.swift */,
+				1DCDC14D2279E04600DC47F9 /* DetailViewController.swift */,
 				1D1AC2A12279D4C500BA733F /* Main.storyboard */,
 				1D1AC2A42279D4C600BA733F /* Assets.xcassets */,
 				1D1AC2A62279D4C600BA733F /* LaunchScreen.storyboard */,
 				1D1AC2A92279D4C600BA733F /* Info.plist */,
 				1D1AC2AF2279D57800BA733F /* Content */,
-				1DCDC14D2279E04600DC47F9 /* DetailViewController.swift */,
 			);
 			path = "C01A-StormViewer";
 			sourceTree = "<group>";
