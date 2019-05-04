@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var numberQuestions = 0
     
     
     //  ************************************************************
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        print("viewDidLoda()")
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
         
@@ -54,34 +56,64 @@ class ViewController: UIViewController {
     //  MARK: - @IBAction Instance Methods
     //
     @IBAction func buttonTapped(_ sender: UIButton) {
-        var title: String
-        
-        if sender.tag == correctAnswer {
-            title = "Correct"
-            score += 1
-        } else {
-            title = "Wrong"
-            score -= 1
-        }
-        
-        
-        let ac = UIAlertController(title: title,
-                                   message: "Your score is \(score)",
-                                   preferredStyle: .alert)
-        
-        ac.addAction(UIAlertAction(
-            title: "Continue",
-            style: .default,
-            handler: askQuestion))
-
-        present(ac, animated: true)
+        checkTheAnswer(answer: sender.tag)
     }
     
     
     //  ************************************************************
     //  MARK: - Instance methods
     //
-    func askQuestion(action: UIAlertAction! = nil ) {
+    private func checkTheAnswer(answer: Int){
+        print("\ncheckTheAnswer(answer: Int)")
+        var title: String
+        var message: String?
+        
+        if answer == correctAnswer {
+            title = "Correct!"
+            message = nil
+            score += 1
+        } else {
+            title = "Incorrect!"
+            message = "That's the flag of \(countries[answer].uppercased())"
+            score -= 1
+        }
+        
+        numberQuestions += 1
+        print("- numberQuestions: \(numberQuestions)")
+        
+        if numberQuestions < 5 {
+            let ac = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert)
+            
+            ac.addAction(UIAlertAction(
+                title: "Continue",
+                style: .default,
+                handler: askQuestion))
+            
+            present(ac, animated: true)
+        }
+        else {
+            let ac = UIAlertController(
+                title: "GAME OVER",
+                message: "Your final score is \(String(score))",
+                preferredStyle: .alert)
+            
+            ac.addAction(UIAlertAction(
+                title: "Play again",
+                style: .default,
+                handler: askQuestion))
+            
+            present(ac, animated: true)
+            
+            score = 0
+        }
+    }
+    
+    
+    private func askQuestion(action: UIAlertAction! = nil ) {
+        print("\naskQuestion(...)")
         countries.shuffle()
         
         // static func Int.random(in range: Range<Int>) -> Int
@@ -91,7 +123,9 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = countries[correctAnswer].uppercased()
+        title = """
+            Which flag corresponds to \(countries[correctAnswer].uppercased())? | Score: \(String(score))
+        """
     }
     
 }
