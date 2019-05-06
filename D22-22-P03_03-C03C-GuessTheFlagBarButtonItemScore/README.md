@@ -1,6 +1,8 @@
-# Guess the flag bar button item score App
+# Guess the Flag Bar Button Item Score App
 
-## CHALLENGE
+Extension of the Guess the Flag App.
+
+## CHALLENGE 3C
 
 Add a bar button item that shows their score when tapped.
 
