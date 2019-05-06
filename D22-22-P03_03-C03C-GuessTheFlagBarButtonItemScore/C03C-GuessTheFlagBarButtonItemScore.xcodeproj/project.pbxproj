@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C03C-GuessTheFlagBarButonItemScore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C03C-GuessTheFlagBarButtonItemScore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D16C6AB227C315A00D8CEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D16C6AD227C315A00D8CEE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D16C6B0227C315A00D8CEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		1D16C69F227C315A00D8CEE8 = {
 			isa = PBXGroup;
 			children = (
-				1D16C6AA227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore */,
+				1D16C6AA227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore */,
 				1D16C6A9227C315A00D8CEE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		1D16C6A9227C315A00D8CEE8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore.app */,
+				1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D16C6AA227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore */ = {
+		1D16C6AA227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore */ = {
 			isa = PBXGroup;
 			children = (
 				1D16C6AB227C315A00D8CEE8 /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				1D16C6B4227C315D00D8CEE8 /* LaunchScreen.storyboard */,
 				1D16C6B7227C315D00D8CEE8 /* Info.plist */,
 			);
-			path = "C03C-GuessTheFlagBarButonItemScore";
+			path = "C03C-GuessTheFlagBarButtonItemScore";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D16C6A7227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore */ = {
+		1D16C6A7227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D16C6BA227C315D00D8CEE8 /* Build configuration list for PBXNativeTarget "C03C-GuessTheFlagBarButonItemScore" */;
+			buildConfigurationList = 1D16C6BA227C315D00D8CEE8 /* Build configuration list for PBXNativeTarget "C03C-GuessTheFlagBarButtonItemScore" */;
 			buildPhases = (
 				1D16C6A4227C315A00D8CEE8 /* Sources */,
 				1D16C6A5227C315A00D8CEE8 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = "C03C-GuessTheFlagBarButonItemScore";
-			productName = "C03C-GuessTheFlagBarButonItemScore";
-			productReference = 1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore.app */;
+			name = "C03C-GuessTheFlagBarButtonItemScore";
+			productName = "C03C-GuessTheFlagBarButtonItemScore";
+			productReference = 1D16C6A8227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D16C6A3227C315A00D8CEE8 /* Build configuration list for PBXProject "C03C-GuessTheFlagBarButonItemScore" */;
+			buildConfigurationList = 1D16C6A3227C315A00D8CEE8 /* Build configuration list for PBXProject "C03C-GuessTheFlagBarButtonItemScore" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D16C6A7227C315A00D8CEE8 /* C03C-GuessTheFlagBarButonItemScore */,
+				1D16C6A7227C315A00D8CEE8 /* C03C-GuessTheFlagBarButtonItemScore */,
 			);
 		};
 /* End PBXProject section */
@@ -284,12 +284,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "C03C-GuessTheFlagBarButonItemScore/Info.plist";
+				INFOPLIST_FILE = "C03C-GuessTheFlagBarButtonItemScore/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03C-GuessTheFlagBarButonItemScore";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03C-GuessTheFlagBarButtonItemScore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,12 +302,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "C03C-GuessTheFlagBarButonItemScore/Info.plist";
+				INFOPLIST_FILE = "C03C-GuessTheFlagBarButtonItemScore/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03C-GuessTheFlagBarButonItemScore";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03C-GuessTheFlagBarButtonItemScore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D16C6A3227C315A00D8CEE8 /* Build configuration list for PBXProject "C03C-GuessTheFlagBarButonItemScore" */ = {
+		1D16C6A3227C315A00D8CEE8 /* Build configuration list for PBXProject "C03C-GuessTheFlagBarButtonItemScore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D16C6B8227C315D00D8CEE8 /* Debug */,
@@ -326,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D16C6BA227C315D00D8CEE8 /* Build configuration list for PBXNativeTarget "C03C-GuessTheFlagBarButonItemScore" */ = {
+		1D16C6BA227C315D00D8CEE8 /* Build configuration list for PBXNativeTarget "C03C-GuessTheFlagBarButtonItemScore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D16C6BB227C315D00D8CEE8 /* Debug */,
