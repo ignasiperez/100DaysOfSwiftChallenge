@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  C01A-StormViewer
+//  C01A-StormViewerSocial
 //
 //  Created by Ignasi Perez-Valls on 01/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -48,11 +48,6 @@ class DetailViewController: UIViewController {
         //  .action, .add,  .refresh, .search, .camera, .play...
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
-        
-        
-        
-        
-        
         // Do any additional setup after loading the view.
         if let imageToLoad = selectedImge {
             imageView.image  = UIImage(named: imageToLoad)
@@ -83,14 +78,15 @@ class DetailViewController: UIViewController {
                 return
         }
         
-        let vc = UIActivityViewController(activityItems: [image],
-                                          applicationActivities: [])
+        let activityVC = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: [])
         
         // popoverPresentationController: Instance property of parent class UIViewController
-        vc.popoverPresentationController?.barButtonItem =
+        activityVC.popoverPresentationController?.barButtonItem =
             navigationItem.rightBarButtonItem
         
-        present(vc, animated: true)
+        present(activityVC, animated: true)
     }
 
 }

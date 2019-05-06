@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-               BuildableName = "C03A-SocialMedia.app"
-               BlueprintName = "C03A-SocialMedia"
-               ReferencedContainer = "container:C03A-SocialMedia.xcodeproj">
+               BuildableName = "C03A-StormViewerSocial.app"
+               BlueprintName = "C03A-StormViewerSocial"
+               ReferencedContainer = "container:C03A-StormViewerSocial.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03A-SocialMedia.app"
-            BlueprintName = "C03A-SocialMedia"
-            ReferencedContainer = "container:C03A-SocialMedia.xcodeproj">
+            BuildableName = "C03A-StormViewerSocial.app"
+            BlueprintName = "C03A-StormViewerSocial"
+            ReferencedContainer = "container:C03A-StormViewerSocial.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03A-SocialMedia.app"
-            BlueprintName = "C03A-SocialMedia"
-            ReferencedContainer = "container:C03A-SocialMedia.xcodeproj">
+            BuildableName = "C03A-StormViewerSocial.app"
+            BlueprintName = "C03A-StormViewerSocial"
+            ReferencedContainer = "container:C03A-StormViewerSocial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03A-SocialMedia.app"
-            BlueprintName = "C03A-SocialMedia"
-            ReferencedContainer = "container:C03A-SocialMedia.xcodeproj">
+            BuildableName = "C03A-StormViewerSocial.app"
+            BlueprintName = "C03A-StormViewerSocial"
+            ReferencedContainer = "container:C03A-StormViewerSocial.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
