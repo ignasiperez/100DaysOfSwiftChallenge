@@ -1,46 +1,44 @@
-This App lets users scroll through a list of images, then select one to view.
+# Storm Viewer Social App 
+
+Extension of the Storm viewer App. Now users can share images with their friends and save images to their device’s Photo Library.
 
 
 ## INSTRUCTIONS
 
+Use the iOS standard services to save to the photo library the image that is displaying on the image screen.
 
-Show in main screen a list with the name of the pictures, one per row.
-- table view controllers
-- table views
-- table view cells
+- activity view controller
 
-Show pictures in an image screen 
-- app bundles
-- image views
-- images
-- auto layout constraints
-- file management
-- typecasting
+Place de system action button on the right side of the top toolbar.
 
-Navigate from the main screen to the image screen when the user taps any row of the list (table view cell). 
-- navigation controller
-
-Come back from the image screen to the main screen
-- navigation controller
-
-Toggling the hiding and showing of the navigation bar and toolbar to view the images full screen when tapping on the image (content area).
-- navigation controller
-
-Create the title “Storm viewer” on the main screen and “nameOfPicture.jpg” on the image screen
-- view controller
-
-Show large size title on the main screen and normal size title on the image scree
 - navigation bar
 - navigation item
+- bar button item
 
-## CHALLENGES
+Create the method shareTapped() that is called when the user presses the action button.
 
-Adjust the name’s font of the pictures in the list to be larger 
-- Interface Builder
-- table view cell
+shareTapped(): This method will get called by the underlying Objective-C operating system.
 
-Show the image names of the list in sorted order.
-- arrays
+- @objc
 
-Rather than show image names in the image screen, show “Picture X of Y”, where Y is the total number of images and X is the selected picture’s position in the array.
+shareTapped(): convert the image from the image screen to JPEG format with a compression quality of 80%.
+
+- image view
+- image
+
+shareTapped(): Create an activity view controller to share content with other apps and services and tell iOS that it should be anchored to the right bar button Item of our navigation item.
+
+- activity view controller
+- navigation item
+- right bar button item
+
+Show a message asking whether the user is OK with the app writing to their Photo Library.
+
+- Info.plist file
+
+## CHALLENGE 3A
+
+Add the image name to the list of items that are shared. 
+
+- activity view controller
 - arrays
