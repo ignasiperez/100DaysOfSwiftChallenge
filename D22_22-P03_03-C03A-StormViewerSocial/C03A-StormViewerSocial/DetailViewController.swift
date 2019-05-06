@@ -72,14 +72,14 @@ class DetailViewController: UIViewController {
     //  MARK: - Instance methods
     //
     @objc func shareTapped() {
-        guard let image =
-            imageView.image?.jpegData(compressionQuality: 0.8) else {
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8), let name = selectedImge
+        else {
                 print("No image found")
                 return
         }
         
         let activityVC = UIActivityViewController(
-            activityItems: [image],
+            activityItems: [image, name],
             applicationActivities: [])
         
         // popoverPresentationController: Instance property of parent class UIViewController
