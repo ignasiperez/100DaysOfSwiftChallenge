@@ -9,11 +9,15 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    
+    //  ************************************************************
+    //  MARK: - Instance properties
+    //
     var pictures = [String]()
     
     
     //  ************************************************************
-    //  MARK: - Overrided methods UIViewController
+    //  MARK: - Override UIViewController methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +47,7 @@ class ViewController: UITableViewController {
     
     
     //  ************************************************************
-    //  MARK: - TABLE Protocols
+    //  MARK: - Override TABLE Protocols
     //
     //  ViewController inherits UITableViewController which conforms
     //  the protocols UITableViewDataSource and UITableViewDelegate.
