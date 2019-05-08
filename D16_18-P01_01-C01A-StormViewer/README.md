@@ -75,7 +75,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
        - `UIViewController`
    - Give a name to the new view controller
       - Identity Inspector (⌥⌘3)
-      - Storyboard ID: _Detail_
+        - Storyboard ID: _Detail_
    - Add an image view to the view controller
       - Object Library (⌘⇧L)
          - `UIImageView`
@@ -98,6 +98,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 3. _`ViewController.swift`_
    - Show the detail screen when any table row is tapped, and have it show the selected image
      - When the user taps one of the rows of the table view the iOS engine calls `tableView(..., didSelectRowAt indexPath: IndexPath)` (Code 1)
+     - Type Casting
 4. _`DetailViewController.swift`_ `viewDidLoad()`
    - Make the image actually load into the image view.
      - (Code 2)
@@ -105,7 +106,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
      - Change the default setting that makes that all the images are being stretched to fit the screen.
        - Select the image view
          - Attributes inspector (⌥⌘4)
-         - Content Mode: _Aspect Fill_
+           - Content Mode: _Aspect Fill_
 6. _`DetailViewController.swift`_ `viewWillAppear()` `viewWillDisappear()`
    - Allow users to view the images full screen with no navigation bar getting in their way
      - **`UINavigationController`**
@@ -150,3 +151,16 @@ if let imageToLoad = selectedImage {
     imageView.im...  = UIImage(named: ...)
 }
 ```
+
+## INSTRUCTIONS [Day 18 Challenges](https://www.hackingwithswift.com/100/18)
+
+1. _`IB Main.Storyboard`_
+   - - Select Title lable in table view cell
+         - Attributes inspector (⌥⌘4)
+           - ...: ...
+2. _`ViewController.swift`_ `viewDidLoad()`
+   - In your main table view, show the image names in sorted order, so “nssl0033.jpg” comes before “nssl0034.jpg”.
+3. _`DetailViewController.swift`_ `viewDidLoad()`
+   - Rather than show image names in the detail title bar, show “Picture X of Y”,
+     - where Y is the total number of images 
+     - and X is the selected picture’s position in the array. 
