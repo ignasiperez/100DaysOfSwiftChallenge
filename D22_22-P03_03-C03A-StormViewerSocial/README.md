@@ -1,44 +1,58 @@
 # Storm Viewer Social App 
 
-Extension of the Storm viewer App. Now users can share images with their friends and save images to their device’s Photo Library.
+Extension of the Storm viewer App. 
 
+Now users can share images with their friends and save images to their device’s Photo Library.
 
-## INSTRUCTIONS
+## INSTRUCTIONS [Day 22](https://www.hackingwithswift.com/100/22)
 
-Use the iOS standard services to save to the photo library the image that is displaying on the image screen.
+1. _`DetailViewController.swift`_ `viewDidLoad()`
+   - Create a system action bar button item on the right side of the naviagation item.
+   - (Code 1)
+   - **`UINavigationItem`**, **`UIBarButtonItem`**
+2. _`DetailViewController.swift`_ `shareTapped()`
+   - Create a method that is called by the underlying Objective-C engine when the user presses the action button.
+   - **`@objc`**
+   - Inside this method:
+     - Convert the storm image displayed on the detail screen to JPEG format with a compression quality of 80%
+       - `UIImageView`,`UIImage`, (Code 2)
+     - Create an activity view controller to share content with other apps and services and tell iOS that it should be anchored to the right bar button Item of our navigation item.
+     - **`UIActivityViewController`**, **`UINavigationItem`** (Code 2)
+3. _`Xcode Info.plist`_
+   - Show a message asking whether the user is OK with the app writing to their Photo Library.
+     - Inside **`Info.plist`** file
+       - Privacy - Photo Library Additions Usage Description: _We need to save photos you like._
 
-- activity view controller
+Code 1
 
-Place de system action button on the right side of the top toolbar.
+```swift
+navigationItem.right... = 
+       UIBarButtonItem(barButton...: .action,
+       target: ...,
+       action: #se...(shareTapped))
+```
 
-- navigation bar
-- navigation item
-- bar button item
+Code 2
 
-Create the method shareTapped() that is called when the user presses the action button.
+```swift
+@objc func shareTapped() {
+    guard let image = 
+    imageView.image?.jpegData(compressionQuality: ...) else {
+        print("No image found")
+        return
+    }
 
-shareTapped(): This method will get called by the underlying Objective-C operating system.
+    let avc = UIActivityViewController(activity...: [...],
+                                      applicationActivities: [])
+    
+    avc.popoverPresen...?.barButtonItem =
+        navigationItem.right...
+    present(..., animated: true)
+}
+```
 
-- @objc
+## INSTRUCTIONS [Day 22 Challenge 3A](https://www.hackingwithswift.com/read/3/3/wrap-up)
 
-shareTapped(): convert the image from the image screen to JPEG format with a compression quality of 80%.
-
-- image view
-- image
-
-shareTapped(): Create an activity view controller to share content with other apps and services and tell iOS that it should be anchored to the right bar button Item of our navigation item.
-
-- activity view controller
-- navigation item
-- right bar button item
-
-Show a message asking whether the user is OK with the app writing to their Photo Library.
-
-- Info.plist file
-
-## CHALLENGE 3A
-
-Add the image name to the list of items that are shared. 
-
-- activity view controller
-- arrays
+1. _`DetailViewController.swift`_ `shareTapped()`
+   - Add the image name to the list of items that are shared.
+     - `UIActivityViewController`
