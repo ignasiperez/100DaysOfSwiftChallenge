@@ -11,6 +11,12 @@ import UIKit
 class DetailViewController: UIViewController {
 
     //  ************************************************************
+    //  MARK: - @IBOutlet Instance Properties
+    //
+    @IBOutlet var imageView: UIImageView!
+    
+    
+    //  ************************************************************
     //  MARK: - Instance properties
     //
     var selectedImge: String?
@@ -18,15 +24,8 @@ class DetailViewController: UIViewController {
     var selectedPicturePosition = 0
     var totalPictures = 0
     
-    
     //  ************************************************************
-    //  MARK: - @IBOutlet Instance Properties
-    //
-    @IBOutlet var imageView: UIImageView!
-    
-    
-    //  ************************************************************
-    //  MARK: - Overrided methods UIViewController
+    //  MARK: - Override UIViewController methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
