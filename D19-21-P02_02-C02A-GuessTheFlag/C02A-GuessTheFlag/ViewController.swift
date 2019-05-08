@@ -11,6 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     //  ************************************************************
+    //  MARK: - @IBOutlet Instance Properties
+    //
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    
+    
+    //  ************************************************************
     //  MARK: - Instance properties
     //
     var countries = [String]()
@@ -20,15 +28,7 @@ class ViewController: UIViewController {
     
     
     //  ************************************************************
-    //  MARK: - @IBOutlet Instance Properties
-    //
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    
-    
-    //  ************************************************************
-    //  MARK: - Overrided Methods UIViewController
+    //  MARK: - Override UIViewController methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     
     
     //  *****************************************************************
-    //  MARK: - @IBAction Instance Methods
+    //  MARK: - @IBAction Instance methods
     //
     @IBAction func buttonTapped(_ sender: UIButton) {
         checkTheAnswer(answer: sender.tag)
@@ -129,4 +129,3 @@ class ViewController: UIViewController {
     }
     
 }
-
