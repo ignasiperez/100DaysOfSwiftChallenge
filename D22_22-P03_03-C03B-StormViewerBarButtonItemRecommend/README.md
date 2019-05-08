@@ -8,5 +8,5 @@ Now users from main screen can recommend the app to other people.
 
 1. Add a bar button item to the main view controller that recommends the app to other people
    - @objc
-   - `UINavigationItem`, `UIBarButtonItem`**
+   - `UINavigationItem`, `UIBarButtonItem`
    - `UIActivityViewController`

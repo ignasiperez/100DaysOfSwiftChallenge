@@ -8,5 +8,5 @@ Now users do not see anymore their score on top of the screen, but they have a b
 
 1. Add a bar button item that shows their score when tapped.
    - @objc
-   - `UINavigationItem`, `UIBarButtonItem`**
+   - `UINavigationItem`, `UIBarButtonItem`
    - `UIActivityViewController`
