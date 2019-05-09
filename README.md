@@ -16,4 +16,4 @@
 
 | Day(s) | Project(s) | Challenge / Milestone | Swift Language & Frameworks |
 | :-----: | :-----: | :--------------: | :-------------------------------------------- |
-| 23-23 | 01-03  | [M01C-WorldFlags](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D22-22-P03_03-C03C-GuessTheFlagBarButtonItemScore) | Days 16-22 |
+| 23-23 | 01-03  | [M01C-WorldFlags](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D23_23-P01_03-M01A-WorldFlags) | Days 16-22 |
