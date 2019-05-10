@@ -1,6 +1,6 @@
 # Easy Browser App
 
-A game that shows some random flags to users and ask them to choose which one belongs to a particular country.
+Functional Web browser embedded in the App.
 
 ## INSTRUCTIONS [Day 24](https://www.hackingwithswift.com/100/24)
 
