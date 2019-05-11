@@ -22,7 +22,6 @@ Functional Web browser embedded in the App.
        - "https://www.hackingwithswift.com"
      - Create a new `URLRequest` object from the url, and give it to our web view to load.
      - Allow users to swipe from the left or right edge to move backward or forward in their web browsing.
-       
 4. CHOOSE THE WEBSITE
    - _`ViewController.swift`_ `viewDidLoad()`
      - Add a button to the navigation bar (Code 2)
@@ -33,7 +32,7 @@ Functional Web browser embedded in the App.
      - When user chooses one website in the alert action, iOS engine calls to _`openPage(action: UIAlertAction)`_ instance method. (Code 4)
 5. SETTING THE TITLE IN THE NAVIGATION BAR WHEN THE PAGE FINISH DOWNLOADING
    - _`ViewController.swift`_ `webView(..., didFinish navigation: WKNavigation)`
-     - (Code 5) 
+     - (Code 5)
 
 Code 1
 
@@ -49,9 +48,9 @@ Code 2
 
 ```swift
 navigationItem.right····· = UIBarButtonItem(
-  title: "Open…", 
-  style: .·····, 
-  target: ·····, 
+  title: "Open…",
+  style: .·····,
+  target: ·····,
   action: #selector(openTapped)
 )
 ```
@@ -64,18 +63,18 @@ Code 3
                               message: nil,
                               preferredStyle: .action·····)
 
-  ac.addAction(UIAlertAction(title: "apple.com", 
-                              style: .·····, 
+  ac.addAction(UIAlertAction(title: "apple.com",
+                              style: .·····,
                               handler: openPage))
 
-  ac.addAction(UIAlertAction(title: "hackingwithswift.com", 
-                              style: .·····, 
+  ac.addAction(UIAlertAction(title: "hackingwithswift.com",
+                              style: .·····,
                               handler: openPage))
 
-  ac.addAction(UIAlertAction(title: "Cancel", 
+  ac.addAction(UIAlertAction(title: "Cancel",
                               style: .·····))
 
-  ac.popoverPresentation...?.barButtonItem = 
+  ac.popoverPresentation...?.barButtonItem =
                             self.navigation·····.rightBarButtonItem
 
   present(·····, animated: true)
@@ -125,12 +124,12 @@ func webView(_ webView: WKWebView,
 
 ```swift
 let spacer = UIBarButtonItem(
-    barButtonSystemItem: .flex·····, 
+    barButtonSystemItem: .flex·····,
     target: ·····,
     action: ·····)
 
 let refresh = UIBarButtonItem(
-    barButtonSystemItem: .re·····, 
+    barButtonSystemItem: .re·····,
     target: w·····, 
     action: #selector(webView.·····))
 
@@ -214,3 +213,8 @@ func webView(_ webView: WKWebView,
   decisionHandler(.·····)
 }
 ```
+
+## INSTRUCTIONS [Hacking with Swift Challenges 04A Day 26](https://www.hackingwithswift.com/read/4/6/wrap-up)
+
+1. IF USERS TRY TO VISIT A URL THAT ISN’T ALLOWED, SHOW AN ALERT SAYING IT’S BLOCKED
+2. TRY MAKING TWO NEW TOOLBAR ITEMS WITH THE TITLES BACK AND FORWARD
