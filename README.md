@@ -17,3 +17,10 @@
 | Day(s) | Project(s) | Challenge / Milestone | Swift Language & Frameworks |
 | :-----: | :-----: | :--------------: | :-------------------------------------------- |
 | 23-23 | 01-03  | [M01C-WorldFlags](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D23_23-P01_03-M01A-WorldFlags) | Days 16-22 |
+
+## Days 24-31: Web views, user input, and Auto Layout
+
+| Day(s) | Project(s) | Challenge / Milestone | Swift Language & Frameworks |
+| :-----: | :-----: | :--------------: | :-------------------------- |
+| 24-26 | 04-04  | [C04A-EasyBrowser]() | **Delegation**, **Key-value observing (KVO)**. <br/> **Foundation**: **`URL`**, **`URLRequest`**, <br/> **UIKit**: **`UIBarbuttonItem`**, `UINavigationBar`, `UINavigationController`, `UINavigationItem`, **`UIProgressView`**, **`UIToolbar`** <br/> **WebKit**: **`WKNavigation`**, **`WKNavigationDelegate`**, **`WKWebView`**,|
+
