@@ -216,7 +216,7 @@ Code D17-08-No_large_titles_on_view_controller
 navigationItem.largeTitleDisplayMode = .never
 ```
 
-## INSTRUCTIONS [Day 18 Challenges](https://www.hackingwithswift.com/100/18)
+## INSTRUCTIONS [Hacking with Swift Day 18 Challenges](https://www.hackingwithswift.com/100/18)
 
 1. SELECT THE TEXT LABEL INSIDE YOUR TABLE VIEW CELL AND ADJUST ITS FONT SIZE TO SOMETHING LARGER.
    - _`IB Main.Storyboard`_
