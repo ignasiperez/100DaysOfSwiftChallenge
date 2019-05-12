@@ -223,7 +223,7 @@ navigationItem.largeTitleDisplayMode = .never
      - Select Title lable in table view cell
          - Attributes inspector (⌥⌘4)
 2. IN YOUR MAIN TABLE VIEW, SHOW THE IMAGE NAMES IN SORTED ORDER, SO “nssl0033.jpg” COMES BEFORE “nssl0034.jpg”
-   _`ViewController.swift`_ `viewDidLoad()`
+   - _`ViewController.swift`_ `viewDidLoad()`
 3. RATHER THAN SHOW IMAGE NAMES IN THE DETAIL TITLE BAR, SHOW “Picture X of Y”
    - _`DetailViewController.swift`_ `viewDidLoad()`
      - where Y is the total number of images 
