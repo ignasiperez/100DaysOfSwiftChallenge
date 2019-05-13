@@ -56,14 +56,14 @@ class ViewController: UIViewController {
     //  MARK: - @IBAction Instance methods
     //
     @IBAction func buttonTapped(_ sender: UIButton) {
-        checkTheAnswer(answer: sender.tag)
+        checkUserAnswer(answer: sender.tag)
     }
     
     
     //  ************************************************************
     //  MARK: - Instance methods
     //
-    private func checkTheAnswer(answer: Int){
+    private func checkUserAnswer(answer: Int){
         print("\ncheckTheAnswer(answer: Int)")
         var title: String
         var message: String?
