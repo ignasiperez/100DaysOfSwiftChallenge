@@ -34,14 +34,14 @@ This App lets users scroll through a list of images, then select one to view.
            - Attributes inspector (⌥⌘4)
              - Identifier: _Picture_
              - Style: _Basic_
-     - Place the table view controller into a navigation controller
+4. PLACE THE TABLE VIEW CONTROLLER INTO A NAVIGATION CONTROLLER.
+   - _`IB Main.Storyboard`_
        - Click inside the view controller
          - Editor menu Embed In > Navigation Controller.
-       - **`UINavigationController`**
-4. _`ViewController.swift`_
-   - Make the table view show the list of “nssl” pictures
-      - iOS engine calls `tableView(..., numberOfRowsInSection section: Int)` method  to know how many rows should be shown. (Code D16-03-Return the number of rows in a given section)
-      - iOS engine calls `tableView(..., cellForRowAt indexPath: IndexPath)` method to show the picture's names. (Code D16-03-Write the name of each picture in each cell of the table view)
+5. MAKE THE TABLE VIEW SHOW THE LIST OF "nssl" PICTURES
+   _`ViewController.swift`_
+     - iOS engine calls `tableView(..., numberOfRowsInSection section: Int)` method  to know how many rows should be shown. (Code D16-05-Return the number of rows in a given section)
+     - iOS engine calls `tableView(..., cellForRowAt indexPath: IndexPath)` method to show the picture's names. (Code D16-05-Write the name of each picture in each cell of the table view)
 
 Code D16-02-Read from App Bundle to an array
 
@@ -63,7 +63,7 @@ Code D16-03-Inherit from a table view controller
 class ViewController: UITableViewController {
 ```
 
-Code D16-03-Return the number of rows in a given section
+Code D16-05-Return the number of rows in a given section
 
 ```swift
 override func tableView(_ tableView: UITableView,
@@ -72,7 +72,7 @@ override func tableView(_ tableView: UITableView,
 }
 ```
 
-Code D16-03-Write the name of each picture in each cell of the table view
+Code D16-05-Write the name of each picture in each cell of the table view
 
 ```swift
 override func tableView(_ tableView: UITableView,
