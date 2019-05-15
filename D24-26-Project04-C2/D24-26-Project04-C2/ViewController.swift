@@ -58,20 +58,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         setupToolBar()
         
         
-        // D24-03-Make_a_URL_request
-        // let url = URL(string: "https://www.hackingwithswift.com")!
-        // webView.load(URLRequest(url: url))
-        
-        
         // D24-03-Allow_users_to_swipe-from_left_or_right_edge
         webView.allowsBackForwardNavigationGestures = true
         
-        
-        // D25-3. NAVIGATE TO A WEB SITE ONLY IF ITS URL IS IN OUR SAFE LIST
-        // - Modify the web view's initial web page so that it's not hard-coded.
-        let url = URL(string: "https://" + websites[0])!
-        print("- before webView.load(URLRequest(url: url))")
-        webView.load(URLRequest(url: url))
+        downloadWebPage()
     }
     
     
@@ -162,8 +152,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let progressButton = UIBarButtonItem(
             customView: progressView)
         
-        
-        // D25-01. SHOW A TOOLBAR AT THE BOTTOM OF THE SCREEN WITH A REFRESH BUTTON ON THE RIGHT SIDE.
         let spacer = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil, action: nil)
@@ -190,17 +178,17 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         //ac.addAction(UIAlertAction(title: "apple.com",
         //                           style: .default,
-        //                           handler: openPage))
+        //                           handler: downloadWebPage))
         
         //ac.addAction(UIAlertAction(title: "hackingwithswift.com",
         //                           style: .default,
-        //                           handler: openPage))
+        //                           handler: downloadWebPage))
         
         // D25-03-Avoiding_hard_coding
         for website in websites {
             ac.addAction(UIAlertAction(title: website,
                                        style: .default,
-                                       handler: openPage)
+                                       handler: downloadWebPage)
             )
         }
 
@@ -215,8 +203,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     
+    private func downloadWebPage() {
+        // D24-03-Make_a_URL_request
+        // let url = URL(string: "https://www.hackingwithswift.com")!
+        // webView.load(URLRequest(url: url))
+        
+        let url = URL(string: "https://" + websites[0])!
+        print("- before webView.load(URLRequest(url: url))")
+        webView.load(URLRequest(url: url))
+    }
+    
+    
     // D24-04-Download_webpage_from_alert_action
-    func openPage(action: UIAlertAction) {
+    func downloadWebPage(action: UIAlertAction) {
         let url = URL(string: "https://" + action.title!)!
         webView.load(URLRequest(url: url))
     }

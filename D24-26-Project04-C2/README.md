@@ -20,7 +20,7 @@ Functional Web browser embedded in the App.
      - Inherit from `UIViewController` and implement `WKNavigationDelegate` protocol.
        - (Code D24-02-Inherit_UIViewController_and_implement_WKNavigationDelegate_protocol)
 3. Download a web page.
-   - _`ViewController.swift`_ `viewDidView()`
+   - _`ViewController.swift`_ `viewDidView()` _`downladWebPage`_
      - Make a URL request to "https://www.hackingwithswift.com"
        - (Code D24-03-Make_a_URL_request)
      - Allow users to swipe from the left or right edge to move backward or forward in their web browsing.
@@ -32,7 +32,7 @@ Functional Web browser embedded in the App.
    - _`ViewController.swift`_ _`openTapped()`_
      - When user taps the _`Open...`_ button, iOS engine shows a message with different websites to choose.
         - (Code D24-04-Method_called_when_user_taps_action_button)
-   - _`ViewController.swift`_ _`openPage(action: UIAlertAction)`_
+   - _`ViewController.swift`_ _`downloadWebPage(action: UIAlertAction)`_
      - When user chooses one website in the _alert action_, iOS engine calls this instance method. 
        - (Code D24-04-Download_webpage_from_alert_action)
 5. Setting the title in the navigation bar when the page finish downloading.
@@ -68,7 +68,7 @@ Functional Web browser embedded in the App.
 
 ## INSTRUCTIONS [Hacking with Swift Day 26 Challenge 2](https://www.hackingwithswift.com/read/4/6/wrap-up)
 
-1. If users try to visit a url that isn’t allowed, show an alert saying it’s blocked.
+1. If users try to visit a URL that isn’t allowed, show an alert saying it’s blocked.
    - (Code D26-C1-Message_website_not_allowed)
 2. Try making two new _toolbar items_ with the titles back and forward.
    - (Code D26-C2-Two_new_toolbar_items_back_and_forward)
