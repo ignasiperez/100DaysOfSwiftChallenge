@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  C04B-EasyBrowser
+//  D24-26-Project04-C3 - Easy Browser with table view
 //
 //  Created by Ignasi Perez-Valls on 10/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -17,7 +17,11 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     var progressView: UIProgressView!
     
     // var websites = ["developer.apple.com", "www.hackingwithswift.com"]
+    
+    // D26-C3-01-Declare_property_websites
     var websites: [String]!
+    
+    var selectedWebsite: String?
     
     
     //  ************************************************************
@@ -34,12 +38,9 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         print("\nViewController viewDidLoad()")
         
-        // D25-2. ADD A `UIProgressView` TO OUR TOOLBAR TO SHOW HOW FAR THE PAGE IS THROUGH LOADING
-        //  - Register as an observer
+        // D25-02-Register_as_an_observer
         webView.addObserver(
             self,
             forKeyPath: #keyPath(WKWebView.estimatedProgress),
@@ -47,8 +48,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
             context: nil)
 
 
-        // D24-4. CHOOSE THE WEBSITE
-        //  - Add a button to the navigation bar
+        // D24-04-Add_a_bar_button_item
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Open…",
             style: .plain,
@@ -57,37 +57,34 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         )
         
         
+        // D25-01-Show_toolbar_bottom_screen
         setupToolBar()
         
         
-        // D24-3. DOWNLOAD A WEB PAGE
+        // D24-03-Make_a_URL_request
         // let url = URL(string: "https://www.hackingwithswift.com")!
         // webView.load(URLRequest(url: url))
         
         
+        // D24-03-Allow_users_to_swipe-from_left_or_right_edge
         webView.allowsBackForwardNavigationGestures = true
         
-        
-        // D25-3. NAVIGATE TO A WEB SITE ONLY IF ITS URL IS IN OUR SAFE LIST
-        // - Modify the web view's initial web page so that it's not hard-coded.
-        let url = URL(string: "https://" + websites[0])!
-        print("- before webView.load(URLRequest(url: url))")
-        webView.load(URLRequest(url: url))
+        loadPage()
     }
     
     
     //  ************************************************************
     //  MARK: - Implementation WKNavigationDelegate Protocol methods
     //
-    // D24-05. SETTING THE TITLE IN THE NAVIGATION BAR WHEN THE PAGE FINISH DOWNLOADING
+    
+    // D24-5-Setting_title_in_navigationbar_when_page_finish_downloading
     func webView(_ webView: WKWebView,
                  didFinish navigation: WKNavigation!) {
         title = webView.title
     }
     
     
-    // D25-03. NAVIGATE TO A WEB SITE ONLY IF ITS URL IS IN OUR SAFE LIST
-    //  - Evaluate the URL to see whether it's in our safe list
+    // D25-03 Evaluate_URL_to-see-whether_it's_in_our_safe_list
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
@@ -110,6 +107,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
             }
         }
         
+        // D26-C1-Message_website_not_allowed
         domainNotAuthorizedAlert()
         
         decisionHandler(.cancel)
@@ -119,8 +117,8 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     //  ************************************************************
     //  MARK: - Implementation OBSERVER Protocol methods
     //
-    // D25-02. ADD A `UIProgressView` TO OUR TOOLBAR TO SHOW HOW FAR THE PAGE IS THROUGH LOADING
-    //  - Listening when an observed value has changed
+    
+    // D25-02-Listening_observed_value_changes
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?,
@@ -135,9 +133,11 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     //  ************************************************************
     //  MARK: - Instance methods
     //
+    
+    // D25-01-Show_toolbar_bottom_screen
     private func setupToolBar() {
         
-        // D26-02. TRY MAKING TWO NEW TOOLBAR ITEMS WITH THE TITLES BACK AND FORWARD
+        // D26-C2-Two_new_toolbar_items_back_and_forward
         let goBack = UIBarButtonItem(title: "Back",
                                      style: .plain,
                                      target: self,
@@ -151,7 +151,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         )
         
         
-        // D25-02. ADD A `UIProgressView` TO OUR TOOLBAR TO SHOW HOW FAR THE PAGE IS THROUGH LOADING
+        // D25-02-Add_a_progress_view_to_toolbar
         progressView = UIProgressView(
             progressViewStyle: .default)
         
@@ -160,8 +160,6 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         let progressButton = UIBarButtonItem(
             customView: progressView)
         
-        
-        // D25-01. SHOW A TOOLBAR AT THE BOTTOM OF THE SCREEN WITH A REFRESH BUTTON ON THE RIGHT SIDE.
         let spacer = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil, action: nil)
@@ -177,7 +175,8 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     }
     
     
-    // D24-04. CHOOSE THE WEBSITE
+    // D24-04-Method_called_when_user_taps_action_button
+    //
     //  - When user taps the `Open...` button, iOS engine shows a message with different websites to choose.
     @objc func openTapped() {
         print("\nViewController openTapped()")
@@ -211,15 +210,22 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     }
     
     
-    // D24-04. CHOOSE THE WEBSITE
-    //  - When user chooses one website in the alert action, iOS engine calls this method.
+    private func loadPage() {
+        // Code D25-03-Avoiding_hard_coding
+        if let website = selectedWebsite {
+            let url = URL(string: "https://" + website)!
+            webView.load(URLRequest(url: url))
+        }
+    }
+    
+    // D24-04-Download_webpage_from_alert_action
     func openPage(action: UIAlertAction) {
         let url = URL(string: "https://" + action.title!)!
         webView.load(URLRequest(url: url))
     }
     
     
-    // D26-01. IF USERS TRY TO VISIT A URL THAT ISN’T ALLOWED, SHOW AN ALERT SAYING IT’S BLOCKED
+    // D26-C1-Message_website_not_allowed
     private func domainNotAuthorizedAlert(){
         print("\nViewController domainNotAuthorizedAlert()")
         
@@ -238,11 +244,12 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     }
     
     
+    // D26-C2-Two_new_toolbar_items_back_and_forward
     @objc func goBackTapped(){
         webView.goBack()
     }
     
-    
+    // D26-C2-Two_new_toolbar_items_back_and_forward
     @objc func goForwardTapped(){
         webView.goForward()
     }
