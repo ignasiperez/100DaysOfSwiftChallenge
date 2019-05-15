@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  C02A-GuessTheFlag
+//  D22-22-Project03-C3 - Guess the Flag with Score Message
 //
 //  Created by Ignasi Perez-Valls on 03/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -48,11 +48,12 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
+        // D22-C3-01-Add_a_bar_button_item
         navigationItem.rightBarButtonItem =
             UIBarButtonItem(title: "Score",
                             style: .plain,
                             target: self,
-                            action: #selector(showMessageCurrentScore))
+                            action: #selector(scoreTapped))
         
         askQuestion()
     }
@@ -70,7 +71,7 @@ class ViewController: UIViewController {
     //  MARK: - Instance methods
     //
     private func checkTheAnswer(answer: Int){
-        print("\ncheckTheAnswer(answer: Int)")
+        print("\nViewController checkTheAnswer(answer: Int)")
         var title: String
         var message: String?
         
@@ -129,12 +130,13 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = "Which flag corresponds to \(countries[correctAnswer].uppercased())?"
+        title = "\(countries[correctAnswer].uppercased()) Flag?"
     }
     
     
-    @objc func showMessageCurrentScore() {
-        print("\nshowMessageCurrentScore()")
+    // D22-C3-01-Method_called_when_user_taps_action_score_button
+    @objc func scoreTapped() {
+        print("\nViewController scoreTapped()")
         let ac = UIAlertController(
             title: "Current Score",
             message: "Your score is \(score)",
@@ -149,4 +151,3 @@ class ViewController: UIViewController {
     }
     
 }
-

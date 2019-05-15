@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  C02A-GuessTheFlag
+//  D22-22-Project03-C3 - Guess the Flag with Score Message
 //
 //  Created by Ignasi Perez-Valls on 03/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.

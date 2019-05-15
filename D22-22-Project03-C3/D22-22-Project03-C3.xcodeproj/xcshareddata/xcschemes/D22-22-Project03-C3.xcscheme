@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D16C6A7227C315A00D8CEE8"
-               BuildableName = "C03C-GuessTheFlagBarButtonItemScore.app"
-               BlueprintName = "C03C-GuessTheFlagBarButtonItemScore"
-               ReferencedContainer = "container:C03C-GuessTheFlagBarButtonItemScore.xcodeproj">
+               BuildableName = "D22-22-Project03-C3.app"
+               BlueprintName = "D22-22-Project03-C3"
+               ReferencedContainer = "container:D22-22-Project03-C3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D16C6A7227C315A00D8CEE8"
-            BuildableName = "C03C-GuessTheFlagBarButtonItemScore.app"
-            BlueprintName = "C03C-GuessTheFlagBarButtonItemScore"
-            ReferencedContainer = "container:C03C-GuessTheFlagBarButtonItemScore.xcodeproj">
+            BuildableName = "D22-22-Project03-C3.app"
+            BlueprintName = "D22-22-Project03-C3"
+            ReferencedContainer = "container:D22-22-Project03-C3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D16C6A7227C315A00D8CEE8"
-            BuildableName = "C03C-GuessTheFlagBarButtonItemScore.app"
-            BlueprintName = "C03C-GuessTheFlagBarButtonItemScore"
-            ReferencedContainer = "container:C03C-GuessTheFlagBarButtonItemScore.xcodeproj">
+            BuildableName = "D22-22-Project03-C3.app"
+            BlueprintName = "D22-22-Project03-C3"
+            ReferencedContainer = "container:D22-22-Project03-C3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D16C6A7227C315A00D8CEE8"
-            BuildableName = "C03C-GuessTheFlagBarButtonItemScore.app"
-            BlueprintName = "C03C-GuessTheFlagBarButtonItemScore"
-            ReferencedContainer = "container:C03C-GuessTheFlagBarButtonItemScore.xcodeproj">
+            BuildableName = "D22-22-Project03-C3.app"
+            BlueprintName = "D22-22-Project03-C3"
+            ReferencedContainer = "container:D22-22-Project03-C3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
