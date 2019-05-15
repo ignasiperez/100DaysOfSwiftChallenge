@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D1AC29A2279D4C500BA733F /* C03A-StormViewerSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C03A-StormViewerSocial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1AC29A2279D4C500BA733F /* D22-22-Project03-C1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D22-22-Project03-C1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1AC29D2279D4C500BA733F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1AC29F2279D4C500BA733F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D1AC2A22279D4C500BA733F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		1D1AC2912279D4C500BA733F = {
 			isa = PBXGroup;
 			children = (
-				1D1AC29C2279D4C500BA733F /* C03A-StormViewerSocial */,
+				1D1AC29C2279D4C500BA733F /* D22-22-Project03-C1 */,
 				1D1AC29B2279D4C500BA733F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,12 +68,12 @@
 		1D1AC29B2279D4C500BA733F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D1AC29A2279D4C500BA733F /* C03A-StormViewerSocial.app */,
+				1D1AC29A2279D4C500BA733F /* D22-22-Project03-C1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D1AC29C2279D4C500BA733F /* C03A-StormViewerSocial */ = {
+		1D1AC29C2279D4C500BA733F /* D22-22-Project03-C1 */ = {
 			isa = PBXGroup;
 			children = (
 				1D1AC29D2279D4C500BA733F /* AppDelegate.swift */,
@@ -85,7 +85,7 @@
 				1D1AC2A92279D4C600BA733F /* Info.plist */,
 				1D1AC2AF2279D57800BA733F /* Content */,
 			);
-			path = "C03A-StormViewerSocial";
+			path = "D22-22-Project03-C1";
 			sourceTree = "<group>";
 		};
 		1D1AC2AF2279D57800BA733F /* Content */ = {
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D1AC2992279D4C500BA733F /* C03A-StormViewerSocial */ = {
+		1D1AC2992279D4C500BA733F /* D22-22-Project03-C1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D1AC2AC2279D4C600BA733F /* Build configuration list for PBXNativeTarget "C03A-StormViewerSocial" */;
+			buildConfigurationList = 1D1AC2AC2279D4C600BA733F /* Build configuration list for PBXNativeTarget "D22-22-Project03-C1" */;
 			buildPhases = (
 				1D1AC2962279D4C500BA733F /* Sources */,
 				1D1AC2972279D4C500BA733F /* Frameworks */,
@@ -120,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = "C03A-StormViewerSocial";
+			name = "D22-22-Project03-C1";
 			productName = "C03A-SocialMedia";
-			productReference = 1D1AC29A2279D4C500BA733F /* C03A-StormViewerSocial.app */;
+			productReference = 1D1AC29A2279D4C500BA733F /* D22-22-Project03-C1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D1AC2952279D4C500BA733F /* Build configuration list for PBXProject "C03A-StormViewerSocial" */;
+			buildConfigurationList = 1D1AC2952279D4C500BA733F /* Build configuration list for PBXProject "D22-22-Project03-C1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -153,7 +153,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D1AC2992279D4C500BA733F /* C03A-StormViewerSocial */,
+				1D1AC2992279D4C500BA733F /* D22-22-Project03-C1 */,
 			);
 		};
 /* End PBXProject section */
@@ -336,12 +336,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "C03A-StormViewerSocial/Info.plist";
+				INFOPLIST_FILE = "D22-22-Project03-C1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03A-StormViewerSocial";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.D22-22-Project03-C1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -354,12 +354,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "C03A-StormViewerSocial/Info.plist";
+				INFOPLIST_FILE = "D22-22-Project03-C1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.C03A-StormViewerSocial";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.D22-22-Project03-C1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -369,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D1AC2952279D4C500BA733F /* Build configuration list for PBXProject "C03A-StormViewerSocial" */ = {
+		1D1AC2952279D4C500BA733F /* Build configuration list for PBXProject "D22-22-Project03-C1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D1AC2AA2279D4C600BA733F /* Debug */,
@@ -378,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D1AC2AC2279D4C600BA733F /* Build configuration list for PBXNativeTarget "C03A-StormViewerSocial" */ = {
+		1D1AC2AC2279D4C600BA733F /* Build configuration list for PBXNativeTarget "D22-22-Project03-C1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D1AC2AD2279D4C600BA733F /* Debug */,

@@ -142,7 +142,7 @@ class ViewController: UIViewController {
         
         // D20-01-Initialize_title_Instance_Property
         title = """
-            Which flag corresponds to \(countries[correctAnswer].uppercased())? | Score: \(String(score))
+            \(countries[correctAnswer].uppercased()) Flag? | Score: \(String(score))
         """
     }
     

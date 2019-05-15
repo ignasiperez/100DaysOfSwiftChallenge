@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  C03A-StormViewerSocial
+//  D22-22-Project03-C1 - Storm viewer with Sharing
 //
 //  Created by Ignasi Perez-Valls on 01/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
