@@ -1,4 +1,4 @@
-# Guess the flag App
+# Project 2 - Guess the flag App
 
 A game that shows some random flags to users and ask them to choose which one belongs to a particular country.
 
