@@ -4,7 +4,7 @@ Extension of the Storm Viewer App.
 
 Now users can share images with their friends and save images to their device’s Photo Library.
 
-## INSTRUCTIONS [Hacking with Swift Day 22 Challence 1](https://www.hackingwithswift.com/read/3/2/uiactivityviewcontroller-explained)
+## INSTRUCTIONS [Hacking with Swift Day 22](https://www.hackingwithswift.com/read/3/2/uiactivityviewcontroller-explained)
 
 1. Add an _action bar button system item_ on the right side of the _navigation item_.
    - _`DetailViewController.swift`_ `viewDidLoad()`
