@@ -1,4 +1,4 @@
-# Storm Viewer Social App
+# Project 3-C1 - Storm Viewer with Sharing App
 
 Extension of the Storm Viewer App.
 
