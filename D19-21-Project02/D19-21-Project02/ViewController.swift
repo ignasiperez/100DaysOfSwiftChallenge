@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  D19-21-Project02
+//  D19-21-Project02 - Guess the Flag
 //
 //  Created by Ignasi Perez-Valls on 03/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
