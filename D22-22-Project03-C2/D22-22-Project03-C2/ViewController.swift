@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  C03B-StormViewerBarButtonItemRecomend
+//  D22-22-Project03-C2 - Storm Viewer with Recomendations
 //
 //  Created by Ignasi Perez-Valls on 01/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -25,6 +25,8 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        
+        // D22-C2-01-Add_a_bar_button_system_item
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .action,
             target: self,
@@ -99,9 +101,12 @@ class ViewController: UITableViewController {
         }
     }
     
+    
     //  ************************************************************
     //  MARK: - Instance methods
     //
+    
+    // Code D22-C2-01-Method_called_when_user_taps_action_button
     @objc func shareTapped() {
         let message = "Love this App. It's great for viewing storms."
         

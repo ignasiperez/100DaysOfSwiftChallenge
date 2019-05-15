@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-               BuildableName = "C03B-StormViewerBarButtonItemRecommend.app"
-               BlueprintName = "C03B-StormViewerBarButtonItemRecommend"
-               ReferencedContainer = "container:C03B-StormViewerBarButtonItemRecommend.xcodeproj">
+               BuildableName = "D22-22-Project03-C2.app"
+               BlueprintName = "D22-22-Project03-C2"
+               ReferencedContainer = "container:D22-22-Project03-C2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03B-StormViewerBarButtonItemRecommend.app"
-            BlueprintName = "C03B-StormViewerBarButtonItemRecommend"
-            ReferencedContainer = "container:C03B-StormViewerBarButtonItemRecommend.xcodeproj">
+            BuildableName = "D22-22-Project03-C2.app"
+            BlueprintName = "D22-22-Project03-C2"
+            ReferencedContainer = "container:D22-22-Project03-C2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03B-StormViewerBarButtonItemRecommend.app"
-            BlueprintName = "C03B-StormViewerBarButtonItemRecommend"
-            ReferencedContainer = "container:C03B-StormViewerBarButtonItemRecommend.xcodeproj">
+            BuildableName = "D22-22-Project03-C2.app"
+            BlueprintName = "D22-22-Project03-C2"
+            ReferencedContainer = "container:D22-22-Project03-C2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D1AC2992279D4C500BA733F"
-            BuildableName = "C03B-StormViewerBarButtonItemRecommend.app"
-            BlueprintName = "C03B-StormViewerBarButtonItemRecommend"
-            ReferencedContainer = "container:C03B-StormViewerBarButtonItemRecommend.xcodeproj">
+            BuildableName = "D22-22-Project03-C2.app"
+            BlueprintName = "D22-22-Project03-C2"
+            ReferencedContainer = "container:D22-22-Project03-C2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

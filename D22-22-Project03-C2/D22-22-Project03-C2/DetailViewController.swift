@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  C03B-StormViewerBarButtonItemRecomend
+//  D22-22-Project03-C2 - Storm Viewer with Recomendations
 //
 //  Created by Ignasi Perez-Valls on 01/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -54,7 +54,5 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.hidesBarsOnTap = false
     }
-    
-    
     
 }
