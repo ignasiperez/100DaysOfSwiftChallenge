@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  D22-22-Project03-C1 - Storm viewer with Sharing
+//  D22-22-Project03-C1 - Storm Viewer with Sharing
 //
 //  Created by Ignasi Perez-Valls on 01/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -42,6 +42,8 @@ class DetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         
+        // D22-01-Add_a_bar_button_system_item
+        //
         // enum UIBarButtonItem.SystemItem: Int
         // Constants
         //  .action, .add,  .refresh, .search, .camera, .play...
@@ -70,6 +72,8 @@ class DetailViewController: UIViewController {
     //  ************************************************************
     //  MARK: - Instance methods
     //
+    
+    // D22-02-Method_called_when_user_taps_action_button
     @objc func shareTapped() {
         guard let image = imageView.image?.jpegData(compressionQuality: 0.8), let name = selectedImge
         else {
@@ -77,7 +81,9 @@ class DetailViewController: UIViewController {
                 return
         }
         
+        
         let avc = UIActivityViewController(
+            // D22-C1-Add_image_name_to_list_of_items
             activityItems: [image, name],
             applicationActivities: [])
         
