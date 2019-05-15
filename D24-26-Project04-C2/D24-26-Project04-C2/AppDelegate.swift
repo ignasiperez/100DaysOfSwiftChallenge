@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  C04A-EasyBrowser
+//  D24-26-Project04-C2 - Easy Browser
 //
 //  Created by Ignasi Perez-Valls on 10/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
