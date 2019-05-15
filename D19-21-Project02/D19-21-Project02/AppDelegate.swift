@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  C02A-GuessTheFlag
+//  D19-21-Project02
 //
 //  Created by Ignasi Perez-Valls on 03/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
