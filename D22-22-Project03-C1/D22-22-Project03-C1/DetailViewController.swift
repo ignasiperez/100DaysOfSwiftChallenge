@@ -47,7 +47,10 @@ class DetailViewController: UIViewController {
         // enum UIBarButtonItem.SystemItem: Int
         // Constants
         //  .action, .add,  .refresh, .search, .camera, .play...
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(shareTapped))
         
         // Do any additional setup after loading the view.
         if let imageToLoad = selectedImge {
