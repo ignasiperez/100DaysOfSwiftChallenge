@@ -1,6 +1,6 @@
 # Project 3-C3 - Guess the Flag with Score Message App
 
-Modification / Extension of the Guess the Flag App.
+Modification / Extension of the _Guess the Flag_ App.
 
 Now users do not see anymore their score on top of the screen, but they have a button with text "Score" that when tapped shows a message with their score.
 
