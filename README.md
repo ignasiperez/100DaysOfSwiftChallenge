@@ -16,11 +16,11 @@
 
 | Day(s) | Challenge / Milestone | Swift Language & Frameworks |
 | :-----: | :--------------: | :-------------------------------------------- |
-| 23-23 | [Milestone-P01-03](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D23_23-P01_03-M01A-WorldFlags) <br/> World Flags| Days 16-22 |
+| 23-23 | [Milestone-P01-03](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D23-23-Milestone-P01-03) <br/> World Flags| Days 16-22 |
 
 ## Days 24-31: Web views, user input, and Auto Layout
 
 | Day(s) | Challenge / Milestone | Swift Language & Frameworks |
 | :-----: | :--------------: | :-------------------------- |
-| 24-26 | [Project04-C2](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D24_26-P04_04-C04A-EasyBrowser) <br/> Easy Browser | **Delegation**, **Key-value observing (KVO)**. <br/> **Foundation**: **`URL`**, **`URLRequest`**, <br/> **UIKit**: **`UIBarbuttonItem`**, `UINavigationBar`, `UINavigationController`, `UINavigationItem`, **`UIProgressView`**, **`UIToolbar`** <br/> **WebKit**: **`WKNavigation`**, **`WKNavigationDelegate`**, **`WKWebView`**,|
-| 24-26 | [Project04-C3](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D24_26-P04_04-C04B-EasyBrowser) <br/> Easy Browser with Websites from Table  | Project04-C2 <br/> + <br/> **UIKit**: **`UITableView`**, **`UITableViewCell`**, **`UITableViewController`** |
+| 24-26 | [Project04-C2](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D24-26-Project04-C2) <br/> Easy Browser | **Delegation**, **Key-value observing (KVO)**. <br/> **Foundation**: **`URL`**, **`URLRequest`**, <br/> **UIKit**: **`UIBarbuttonItem`**, `UINavigationBar`, `UINavigationController`, `UINavigationItem`, **`UIProgressView`**, **`UIToolbar`** <br/> **WebKit**: **`WKNavigation`**, **`WKNavigationDelegate`**, **`WKWebView`**,|
+| 24-26 | [Project04-C3](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D24-26-Project04-C3) <br/> Easy Browser with table view  | Project04-C2 <br/> + <br/> **UIKit**: **`UITableView`**, **`UITableViewCell`**, **`UITableViewController`** |
