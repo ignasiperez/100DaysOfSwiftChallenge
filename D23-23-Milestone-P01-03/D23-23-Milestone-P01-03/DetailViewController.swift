@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  P01_03-M01A-WorldFlags
+//  D23-23-Milestone-P01-03 - World Flags
 //
 //  Created by Ignasi Perez-Valls on 09/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
         //  .automatic, .always, .never
         navigationItem.largeTitleDisplayMode = .never
         
+        // D23-08-Load_image_into_the_image_view
         if let imageToLoad = selectedCountry {
             imageView.image  = UIImage(named: imageToLoad)
             
@@ -58,10 +59,14 @@ class DetailViewController: UIViewController {
     //  MARK: - Instance methods
     //
     @objc func shareButtonTapped() {
-        let message = "Love this App. It's great for viewing flag countries."
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8), let name = selectedCountry
+            else {
+                print("No image found")
+                return
+        }
         
         let avc = UIActivityViewController(
-            activityItems: [message],
+            activityItems: [image, name],
             applicationActivities: [])
         
         avc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem

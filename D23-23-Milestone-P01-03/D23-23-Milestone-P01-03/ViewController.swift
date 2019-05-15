@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  P01_03-M01A-WorldFlags
+//  D23-23-Milestone-P01-03 - World Flags
 //
 //  Created by Ignasi Perez-Valls on 09/05/2019.
 //  Copyright © 2019 ignasiSwift. All rights reserved.
@@ -86,6 +86,9 @@ class ViewController: UITableViewController {
     }
     
     
+    
+    // D23-08-Put_the_detail_view_controller_in_the_foreground
+    //
     //  Protocol UITableViewDelegate
     //
     ///  Tells the delegate that the specified row is now selected.

@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D796F4222846B68005FA420 /* P01_03-M01A-WorldFlags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P01_03-M01A-WorldFlags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D796F4222846B68005FA420 /* D23-23-Milestone-P01-03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D23-23-Milestone-P01-03.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D796F4522846B68005FA420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D796F4722846B68005FA420 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D796F4A22846B68005FA420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		1D796F3922846B68005FA420 = {
 			isa = PBXGroup;
 			children = (
-				1D796F4422846B68005FA420 /* P01_03-M01A-WorldFlags */,
+				1D796F4422846B68005FA420 /* D23-23-Milestone-P01-03 */,
 				1D796F4322846B68005FA420 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,12 +72,12 @@
 		1D796F4322846B68005FA420 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D796F4222846B68005FA420 /* P01_03-M01A-WorldFlags.app */,
+				1D796F4222846B68005FA420 /* D23-23-Milestone-P01-03.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D796F4422846B68005FA420 /* P01_03-M01A-WorldFlags */ = {
+		1D796F4422846B68005FA420 /* D23-23-Milestone-P01-03 */ = {
 			isa = PBXGroup;
 			children = (
 				1D796F4522846B68005FA420 /* AppDelegate.swift */,
@@ -89,7 +89,7 @@
 				1D796F5122846B69005FA420 /* Info.plist */,
 				1D796F57228474FD005FA420 /* Content */,
 			);
-			path = "P01_03-M01A-WorldFlags";
+			path = "D23-23-Milestone-P01-03";
 			sourceTree = "<group>";
 		};
 		1D796F57228474FD005FA420 /* Content */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D796F4122846B68005FA420 /* P01_03-M01A-WorldFlags */ = {
+		1D796F4122846B68005FA420 /* D23-23-Milestone-P01-03 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D796F5422846B69005FA420 /* Build configuration list for PBXNativeTarget "P01_03-M01A-WorldFlags" */;
+			buildConfigurationList = 1D796F5422846B69005FA420 /* Build configuration list for PBXNativeTarget "D23-23-Milestone-P01-03" */;
 			buildPhases = (
 				1D796F3E22846B68005FA420 /* Sources */,
 				1D796F3F22846B68005FA420 /* Frameworks */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = "P01_03-M01A-WorldFlags";
-			productName = "P01_03-M01A-WorldFlags";
-			productReference = 1D796F4222846B68005FA420 /* P01_03-M01A-WorldFlags.app */;
+			name = "D23-23-Milestone-P01-03";
+			productName = "D23-23-Milestone-P01-03";
+			productReference = 1D796F4222846B68005FA420 /* D23-23-Milestone-P01-03.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D796F3D22846B68005FA420 /* Build configuration list for PBXProject "P01_03-M01A-WorldFlags" */;
+			buildConfigurationList = 1D796F3D22846B68005FA420 /* Build configuration list for PBXProject "D23-23-Milestone-P01-03" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D796F4122846B68005FA420 /* P01_03-M01A-WorldFlags */,
+				1D796F4122846B68005FA420 /* D23-23-Milestone-P01-03 */,
 			);
 		};
 /* End PBXProject section */
@@ -344,12 +344,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "P01_03-M01A-WorldFlags/Info.plist";
+				INFOPLIST_FILE = "D23-23-Milestone-P01-03/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.P01-03-M01A-WorldFlags";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.D23-23-Milestone-P01-03";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -362,12 +362,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 949Z9P63ML;
-				INFOPLIST_FILE = "P01_03-M01A-WorldFlags/Info.plist";
+				INFOPLIST_FILE = "D23-23-Milestone-P01-03/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.P01-03-M01A-WorldFlags";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignasiSwift.D23-23-Milestone-P01-03";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -377,7 +377,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D796F3D22846B68005FA420 /* Build configuration list for PBXProject "P01_03-M01A-WorldFlags" */ = {
+		1D796F3D22846B68005FA420 /* Build configuration list for PBXProject "D23-23-Milestone-P01-03" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D796F5222846B69005FA420 /* Debug */,
@@ -386,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D796F5422846B69005FA420 /* Build configuration list for PBXNativeTarget "P01_03-M01A-WorldFlags" */ = {
+		1D796F5422846B69005FA420 /* Build configuration list for PBXNativeTarget "D23-23-Milestone-P01-03" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D796F5522846B69005FA420 /* Debug */,
