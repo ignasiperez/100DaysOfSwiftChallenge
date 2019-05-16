@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    
+    //  ************************************************************
+    //  MARK: - Instance properties
+    //
+    
     var pictures = [String]()
     
     
     //  ************************************************************
     //  MARK: - Overrided methods UIViewController
     //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
