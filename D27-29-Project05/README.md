@@ -54,3 +54,14 @@ This App lets users scroll through a list of images, then select one to view.
      - _`DetailViewController.swift`_ `promptForAnswer()`
        - (Code D27-05-Method_called_when_user_taps_add_action_button):
          - Create an activity view controller with an editable text input field.
+
+## INSTRUCTIONS [Hacking with Swift Day 28](https://www.hackingwithswift.com/100/28)
+
+1. Insert one word.
+   - Create the skeleton of the three checks always returning true.
+     - _`ViewController.swift` _`isPossible(word: String)`_ _`isOriginal(word: String)`_ _`isReal(word: String)`_
+   - Add the inserted word to the _table view_ only if passes the three checks. (At this point we are using the skeletons)
+     - _`DetailViewController.swift`_ _`submit(_ answer: String)`_
+       - (Code D28-01-Check_inserted_word_and_add_it_to_table_view)
+2. Impelement the three check methods.
+3. Give feedback to users through messages.
