@@ -36,6 +36,13 @@ class ViewController: UITableViewController {
             target: self,
             action: #selector(promptForAnswer))
         
+        
+        // D29-03-Add_refresh_button_at_the_top_left_of_the_screen
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(startGame))
+        
         // D27-02-Load_text_file_from_bundle_into_an_array
         loadTextFile(forResource: "start", separatedBy: "\n")
 
@@ -76,7 +83,7 @@ class ViewController: UITableViewController {
 
     
     //  ************************************************************
-    //  MARK: - Instance methods triggered from actions
+    //  MARK: - Instance methods
     //
     
     // D27-05-Method_called_when_user_taps_add_action_button
@@ -101,45 +108,36 @@ class ViewController: UITableViewController {
     // Code D28-01-Check_inserted_word_and_add_it_to_table_view
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
-        let errorTitle: String
-        let errorMessage: String
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
+                    usedWords.insert(lowerAnswer, at: 0)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
                     
                     return
                 } else {
-                    errorTitle = "Word not recognised"
-                    errorMessage = "You can't just make them up, you know!"
+                    showErrorMessage(
+                        errorTitle: "Word not recognised",
+                        errorMessage: "You can't just make them up, you know!")
                 }
             } else {
-                errorTitle = "Word used already"
-                errorMessage = "Be more original!"
+                showErrorMessage(
+                    errorTitle: "Word used already",
+                    errorMessage: "Be more original!")
             }
         } else {
             guard let title = title?.lowercased() else { return }
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from \(title)"
+            showErrorMessage(
+                errorTitle: "Word not possible",
+                errorMessage: "You can't spell that word from \(title)")
         }
-        
-        let ac = UIAlertController(title: errorTitle,
-                                   message: errorMessage,
-                                   preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
     }
 
     
-
-    //  ************************************************************
-    //  MARK: - Instance methods
-    //
-    
+    // D27-02-Load_text_file_from_bundle_into_an_array
     private func loadTextFile(forResource resource: String,
                               separatedBy separation: String) {
         if let startWordsURL = Bundle.main.url(
@@ -159,14 +157,19 @@ class ViewController: UITableViewController {
     }
     
     
-    //D27-03-Generate_new_word_to_play
-    private func startGame() {
+    // D27-03-Generate_new_word_to_play
+    @objc private func startGame() {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
     }
     
+
+    //  ************************************************************
+    //  MARK: - Instance method helpers
+    //
     
+    //  ASSIST: - func submit(_ answer: String)
     func isPossible(word: String) -> Bool {
         print("\nViewController isPossible(word: String)")
         
@@ -185,13 +188,20 @@ class ViewController: UITableViewController {
     }
 
     
-    
+    //  ASSIST: - func submit(_ answer: String)
     func isOriginal(word: String) -> Bool {
         return !usedWords.contains(word)
     }
     
-    
+    //  ASSIST: - func submit(_ answer: String)
     func isReal(word: String) -> Bool {
+        // D29-01-Disallow_short_answers...
+        if word.utf16.count < 3 { return false }
+        
+        // D29-01-..._and_repeated_start_word
+        if word == title { return false }
+        
+        
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(
@@ -204,5 +214,19 @@ class ViewController: UITableViewController {
         
         return misspelledRange.location == NSNotFound
     }
-
+    
+    
+    //  ASSIST: - func submit(_ answer: String)
+    //
+    // D29-02-Show_error_message
+    private func showErrorMessage(errorTitle: String, errorMessage: String) {
+        let ac = UIAlertController(title: errorTitle,
+                                   message: errorMessage,
+                                   preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(ac, animated: true)
+    }
+    
 }
