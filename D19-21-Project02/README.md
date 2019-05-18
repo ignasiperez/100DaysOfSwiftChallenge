@@ -48,10 +48,10 @@ A game that shows some random flags to users and ask them to choose which one be
      - **@2x and @3x images**
 6. Create an array of strings that will hold the countries for our game, and another instance property for the player's current score.
    - _`ViewController.swift`_ _`countries`_, _`score`_
-     - (Code D19-06-Initialize_Countries_Array_and_score)
+     - (Code D19-06-Initialize_countries_array_and_score)
 7. Fill the _`countries`_ array with the flags we have.
    - _`ViewController.swift`_ `viewDidLoad()`
-     - (Code D19-07-Fill_Countries_array)
+     - (Code D19-07-Fill_countries_array)
 8. Write a method that shows the three first flags in the _`countries_` array.
    - _`ViewController.swift`_ `asqQuestion()`
      - (Code D19-08-Show_the_three_first_flags)
@@ -70,12 +70,12 @@ A game that shows some random flags to users and ask them to choose which one be
    - _`ViewController.swift`_ 
      - Create an integer property that will store whether it's flag 0, 1 or 2 that holds the correct answer.
        - _`correctAnswer`_
-       - (Code D20-01-Initialize_correctAnswer)
+       - (Code D20-01-Initialize_correctAnswer_instance_property)
    - _`ViewController.swift`_ `asqQuestion()`
      - Assign a random number between 0 and 2 inclusive to the _`corectAnswer`_ property
        - (Code D20-01-Assing_a_random_number_between_0_and_2)
      - At the top of the screen show the name of the country to guess in uppercased letters.
-       - (Code D20-01-Initialize_title_Instance_Property)
+       - (Code D20-01-Initialize_title_instance_property)
 2. Connect the three buttons "tap" action to the _view controller_ code
    - _`IB Main.Storyboard`_
      - Select the first flag button

@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     //  ************************************************************
-    //  MARK: - @IBOutlet Instance Properties
+    //  MARK: - Instance @IBOutlet Properties
     //
+    
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
@@ -22,11 +23,11 @@ class ViewController: UIViewController {
     //  MARK: - Instance properties
     //
     
-    // D19-06-Initialize_Countries_Array_and_score
+    // D19-06-Initialize_countries_array_and_score
     var countries = [String]()
     var score = 0
     
-    // D20-01-Initialize_correctAnswer
+    // D20-01-Initialize_correctAnswer_instance_property
     var correctAnswer = 0
     
     var numberQuestions = 0
@@ -35,25 +36,20 @@ class ViewController: UIViewController {
     //  ************************************************************
     //  MARK: - Override UIViewController methods
     //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("\nViewDidLoda()")
         
-        // D19-07-Fill_Countries_array
+        // D19-07-Fill_countries_array
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
         
         // D19-10-Draw_one_point_gray_line_around_the_buttons
-        //
-        // layer: Instance property of parent class UIView
-        button1.layer.borderWidth = 1
-        button2.layer.borderWidth = 1
-        button3.layer.borderWidth = 1
-        
-        button1.layer.borderColor = UIColor.lightGray.cgColor
-        button2.layer.borderColor = UIColor.lightGray.cgColor
-        button3.layer.borderColor = UIColor.lightGray.cgColor
+        drawLineAroundButtons(borderWidth: 1,
+                              color: UIColor.lightGray.cgColor,
+                              buttons: [button1, button2, button3])
         
         // D19-08-Show_the_three_first_flags
         askQuestion()
@@ -61,7 +57,7 @@ class ViewController: UIViewController {
     
     
     //  *****************************************************************
-    //  MARK: - @IBAction Instance methods
+    //  MARK: - Instance @IBAction methods
     //
     @IBAction func buttonTapped(_ sender: UIButton) {
         // D20-03-Check_answer_and_update_score
@@ -144,6 +140,25 @@ class ViewController: UIViewController {
         title = """
             \(countries[correctAnswer].uppercased()) Flag? | Score: \(String(score))
         """
+    }
+    
+    
+    //  ************************************************************
+    //  MARK: - Instance reusable helper methods
+    //
+    
+    //  ASSIST: - func viewDidLoad()
+    //
+    // D19-10-Draw_one_point_gray_line_around_the_buttons
+    private func drawLineAroundButtons(borderWidth: CGFloat,
+                                       color: CGColor,
+                                       buttons: [UIButton]) {
+        for button in buttons {
+            // layer: Instance property of parent class UIView
+            button.layer.borderWidth = borderWidth
+            
+            button.layer.borderColor = color
+        }
     }
     
 }
