@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
     //  MARK: - Instance properties
     //
     
-    // Code D27-02-Initialize_allWords_and_usedWords_empty_arrays
+    // D27-02-Initialize_allWords_and_usedWords_empty_arrays
     var allWords = [String]()
     var usedWords = [String]()
     
@@ -34,27 +34,32 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(promptForAnswer))
+            action: #selector(promptForAnswer)
+        )
         
         
         // D29-03-Add_refresh_button_at_the_top_left_of_the_screen
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .refresh,
             target: self,
-            action: #selector(startGame))
+            action: #selector(startGame)
+        )
+        
+        // Extra: Help button in the bottom right of the screen
+        setupToolBar()
         
         // D27-02-Load_text_file_from_bundle_into_an_array
         loadTextFile(forResource: "start", separatedBy: "\n")
 
         // D27-03-Generate_new_word_to_play
         startGame()
-
     }
     
     
     //  ************************************************************
     //  MARK: - TABLE Protocols
     //
+    
     //  ViewController inherits UITableViewController which conforms
     //  the protocols UITableViewDataSource and UITableViewDelegate.
     //
@@ -90,7 +95,8 @@ class ViewController: UITableViewController {
     @objc func promptForAnswer() {
         let ac = UIAlertController(title: "Enter answer",
                                    message: nil,
-                                   preferredStyle: .alert)
+                                   preferredStyle: .alert
+        )
         
         ac.addTextField()
         
@@ -105,7 +111,7 @@ class ViewController: UITableViewController {
     }
     
     
-    // Code D28-01-Check_inserted_word_and_add_it_to_table_view
+    // D28-01-Check_inserted_word_and_add_it_to_table_view
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
@@ -164,9 +170,46 @@ class ViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    // Extra: Help button in the bottom right of the screen
+    private func setupToolBar() {
+        let help = UIBarButtonItem(title: "Help",
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(helpTapped)
+        )
+        
+        let spacer = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil, action: nil
+        )
+        
+        
+        toolbarItems = [spacer, help]
+        
+        navigationController?.isToolbarHidden = false
+    }
+    
+    
+    // Extra: Help button in the bottom right of the screen
+    @objc func helpTapped() {
+        print("\nViewController openTapped()")
+        let ac = UIAlertController(
+            title: "GAME RULES",
+            message: "Create new words only with the letters of the word at the top of the screen",
+            preferredStyle: .alert
+        )
+        
+        ac.addAction(UIAlertAction(title: "Ok",
+                                   style: .default)
+        )
+        
+        present(ac, animated: true)
+    }
+    
 
     //  ************************************************************
-    //  MARK: - Instance method helpers
+    //  MARK: - Instance helper methods
     //
     
     //  ASSIST: - func submit(_ answer: String)
@@ -220,13 +263,15 @@ class ViewController: UITableViewController {
     //
     // D29-02-Show_error_message
     private func showErrorMessage(errorTitle: String, errorMessage: String) {
+        
         let ac = UIAlertController(title: errorTitle,
                                    message: errorMessage,
-                                   preferredStyle: .alert)
+                                   preferredStyle: .alert
+        )
         
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         
         present(ac, animated: true)
     }
-    
+        
 }
