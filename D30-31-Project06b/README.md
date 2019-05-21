@@ -60,16 +60,16 @@ This app shows how to distribute five labels programtically for portrait and lan
   - **Visual Format Language (VFL) Technology** 
     - Horizontally, I want my label to go edge to edge in my view.
       - `view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|",...)`
-        - _`H`_: Defining a horizontal layout.
+        - `H`: Defining a horizontal layout.
         - `|`: The edge of the view controller.
         - `[]`: The edges of the view.
     - Vertically, I want my labels to be separated vertically with a 10 points distance.
       - `view.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1]-[label2]-[label3]-[label4]-[label5]",...)`
-        - _`V`_: Defining a vertical layout.
+        - `V`: Defining a vertical layout.
         - _`-`_: "space". It's 10 points by default, but we can customize it.
         - `|`: This vertical VFL doesn't have a pipe at the end, so we're not forcing the last label to stretch all the way to the edge of our view. This will leave whitespace after the last label.
     - Vertically, I want my labels to be 88 points high and the last label must be at least 10 points away from the bottom of the view controller's view.
-      - `view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==88)]-[label2(==88)]-[label3(==88)]-[label4(==88)]-[label5(==88)]-(>=10)-|",...)``
+      - `view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==88)]-[label2(==88)]-[label3(==88)]-[label4(==88)]-[label5(==88)]-(>=10)-|",...)`
         - `(==88)`: 88 points high.
         - `(>=10)`: At least 10 points away from the bottom of the view controller's view.
     - Vertically, I want my labels to be 88 points high, but I do not want to hard-code the numbers.
