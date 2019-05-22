@@ -28,9 +28,9 @@ On the top right of the detail screen there is a button that lets the user share
      - Editor menu Embed In > Navigation Controller.
 4. Make the _table view_ show the list of images with suffix _`.png`_
    - _`ViewController.swift`_
-   - Store the name of the images into an array called _`countries`_.
-   - iOS engine calls `tableView(..., numberOfRowsInSection section: Int)` method  to know how many rows should be shown.
-   - iOS engine calls `tableView(..., cellForRowAt indexPath: IndexPath)` method to show the coutries names.
+     - Store the name of the images into an array called _`countries`_.
+     - iOS engine calls `tableView(..., numberOfRowsInSection section: Int)` method  to know how many rows should be shown.
+     - iOS engine calls `tableView(..., cellForRowAt indexPath: IndexPath)` method to show the countries names.
 5. Add gray arrows (Disclosure Indicator) at the right of the table view cells.
    - _`IB Main.Storyboard`_
      - Select "Country"
