@@ -27,3 +27,9 @@
 | 27-29 | [Project05](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D27-29-Project05) <br/> Word Scramble | **Closures**: Weak references<br/> **Foundation**: `NSNotFound`,**`NSString .components(separatedBy:)`**, `NSRange`, **`String .firstIndex(of:) init(contentsOf:) .remove(at:)`** <br/> **UIKit**: **`UITableView .insertRows(at:with:) .reloadData()`**, **`UITextChecker .rangeOfMisspelledWord(...)`** |
 | 30-30 | [Project06a](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D30-30-Project06a) <br/> World Flag with Landscape View  | Project02 <br/> + <br/>  **Auto Layout**: Aspect ratio constraints. |
 | 30-31 | [Project06b](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D30-31-Project06b) <br/> Auto Layout | **Programatically Auto Layout**: **Auto Layout Visual Format Language (VFL) technology** with _constraints metrics_ and _priorities_. **_Anchor_ technology**. <br/> **UIKit**: **`NSLayoutAnchor NSLayoutConstraint .constraints(·withVisualFormat:options:metrics:views:) NSLayoutDimension .constraint(equalTo) NSLayoutYAxisAnchor`** **`UIView .addConstraints(_:) .addSubview() heightAnchor safeAreaLayoutGuide .sizeToFit().translatesAutoresizingMaskIntoConstraints topAnchor widthAnchor`** |
+
+## Day 32: Consolidation III
+
+| Day(s) | Challenge / Milestone | Swift Language & Frameworks |
+| :-----: | :--------------: | :-------------------------------------------- |
+| 32-32 | [Milestone-P04-06](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D32-32-Milestone-P04-06) <br/> Shopping List| Days 24-31 |
