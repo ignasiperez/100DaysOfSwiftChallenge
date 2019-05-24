@@ -14,6 +14,7 @@
 		1DDF1C59229594E700B84D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDF1C57229594E700B84D8D /* LaunchScreen.storyboard */; };
 		1DDF1C612296935400B84D8D /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF1C602296935400B84D8D /* Petition.swift */; };
 		1DDF1C632296A8C500B84D8D /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF1C622296A8C500B84D8D /* Petitions.swift */; };
+		1DDF1C6522981F6E00B84D8D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF1C6422981F6E00B84D8D /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1DDF1C5A229594E700B84D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDF1C602296935400B84D8D /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		1DDF1C622296A8C500B84D8D /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		1DDF1C6422981F6E00B84D8D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				1DDF1C4E229594E600B84D8D /* AppDelegate.swift */,
 				1DDF1C50229594E600B84D8D /* ViewController.swift */,
-				1DDF1C602296935400B84D8D /* Petition.swift */,
+				1DDF1C6422981F6E00B84D8D /* DetailViewController.swift */,
 				1DDF1C622296A8C500B84D8D /* Petitions.swift */,
+				1DDF1C602296935400B84D8D /* Petition.swift */,
 				1DDF1C52229594E600B84D8D /* Main.storyboard */,
 				1DDF1C55229594E700B84D8D /* Assets.xcassets */,
 				1DDF1C57229594E700B84D8D /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				1DDF1C51229594E600B84D8D /* ViewController.swift in Sources */,
 				1DDF1C632296A8C500B84D8D /* Petitions.swift in Sources */,
+				1DDF1C6522981F6E00B84D8D /* DetailViewController.swift in Sources */,
 				1DDF1C4F229594E600B84D8D /* AppDelegate.swift in Sources */,
 				1DDF1C612296935400B84D8D /* Petition.swift in Sources */,
 			);

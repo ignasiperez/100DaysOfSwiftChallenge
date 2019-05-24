@@ -7,55 +7,84 @@ This App lets users scroll through a list of images, then select one to view.
 1. Setting up.
    - _`Xcode`_
      - Create a new _Single View App_ project.
-       - Product Name: _Project7_
+       - Product Name: **_Project7_**
      - Create two new Swift files
-       - _Petition.swift_, _Petitions.swift_
+       - **_Petition.swift_**, **_Petitions.swift_**
 2. Table setup to show a list of petitions in main screen.
    - _`ViewController.swift`_
      - Instead of inheriting from a _view controller_ should inherits from a _table view controller_.
    - _`IB Main.Storyboard`_
      - Delete "View Controller Scene" and create a new _table view controller_.
      - Tell Xcode that this storyboard _table view controller_ is closely related with class _`ViewController.swift`_.
-     - Identity Inspector (⌥⌘3)
-        - Class: _ViewController_
+       - Identity Inspector (⌥⌘3)
+         - Class: **_ViewController_**
      - Tell iOS engine that _table view controller_ is what should be shown when the app first runs.
        - Attributes inspector (⌥⌘4)
-         - View Controller: _Is Initial View Controller_
-     - From our code we'll need to identificate the _table view cells_ that will show the petitions. While you’re in the Attributes Inspector change also the Style option.
+         - View Controller: **_Is Initial View Controller_**
+     - From our code we'll need to identificate the _table view cells_ that will show the petitions. While you’re in the _Attributes Inspector_ change also the _Style_ option.
        - Select "Table View Cell"
          - Attributes inspector (⌥⌘4)
-           - Identifier: _Cell_
-           - Accessory: _Disclosure Indicator_
-           - Style: _Subtitle_
-     - Place the _table view controller_ into a _navigation controller_ and a _tab bar controller_
+           - Identifier: **_Cell_**
+           - Accessory: **_Disclosure Indicator_**
+           - Style: **_Subtitle_**
+     - Place the _table view controller_ into a _navigation controller_ and a _tab bar controller_.
        - Editor menu Embed In > Navigation Controller
        - Editor menu Embed IN > Tab Bar Controller
-     - Add _Most Recent_ button in the tab bar
+     - Add _Most Recent_ button in the tab bar.
        - Select in _Navigation Controller Scene_ _Tab Bar Item_
          - Attributes inspector (⌥⌘4)
-         - System Item: _Most Recent_
-     - From our code we'll need to identificate this new view controller.
-       - Select in _Navigation Controller
+         - System Item: **_Most Recent_**
+     - From our code we'll need to identificate this new _view controller_.
+       - Select in _Navigation Controller_
          - Identity Inspector (⌥⌘3)
-           - Storyboard ID: _NavController_
+           - Storyboard ID: **_NavController_**
    - _`ViewController.swift`_
-     - Make the skeleton for the table view show the list of petitions
+     - Make the skeleton for the _table view_ show the list of petitions
        - Make an empty array of type `String`.
          - _`petitions`_
    - _`ViewController.swift`_  `tableView(..., cellForRowAt indexPath: IndexPath)`
-       - Show subtitles
+       - Show subtitles in the _table view cells_.
          - (Code D33-02-Skeleton_cell_shows_subtitles)
-3. Define the custom structs _`Petition`_ and _`Petitions`_
+3. Define the data structures we need to load the JSON data.
    - _`Petition.swift`_, _`Petitions.swift`_
       - (Code D33-03-Define_custom_struct_Petition)
       - (Code D33-03-Define_custom_struct_Petitions)
 4. create an instance property array called _`petitions`_ that will store our petitions.
    - _`ViewController.swift`_
       - (Code D33-04-Initialize_petitions_empty_arrays)
-5. Fill the table view with Whitehouse petitions
+5. Fill the table view with Whitehouse petitions.
    - Obtain JSON data from Whitehouse server through a URL connection.
      - _`ViewController.swift`_ `viewDidLoad()`
        - (Code D33-05-Obtain_JSON_data_from_server_through_a_URL_connection)
    - Parse the Whitehouse petitions into our data type _`Petition`_
       - _`ViewController.swift`_ _`parse(json: Data)`_
         - (Code D33-05-Parse_the_Whitehouse Petitions)
+   - Make for each table cell print out the title value of our Petition object and as subtile the body of the WhiteHouse petition.
+     - _`ViewController.swift`_ _`tableView(..., cellForRowAt indexPath: IndexPath)`_
+       - (Code D33-05-Print_out_title_and_body)
+
+We want to modify this so that the cells print out the title value of our Petition object, but we also want to use the subtitle text label that got added when we 
+
+## INSTRUCTIONS [Hacking with Swift Day 34](https://www.hackingwithswift.com/100/34)
+
+1. Create a detail screen that will be shown when the user taps a Whitehouse petition from the list.
+   - _`Xcode`_
+     - New > File > iOS > Cocoa Touch Class
+       - Name: **_DetailViewController_**
+       - Subclass Of: **_UIViewController_**
+2. Make the _detail view controller_ to become a web browser.
+   - _`DetailViewController.swift`_
+     - Import **`WebKit`** Framework
+     - Declare `detailItem` instance property of type `Petition`
+   - _`DetailViewController.swift`_ `loadView()`
+     - Make our _view_ (the root view of the _view controller_) the _web view_.
+       - (Code D34-02-Make_our_view_the_web_view)
+3. Load a custom HTML string to our webview when user selects a Whitehouse petition from the lies.
+   - _`DetailViewController.swift`_ `viewDidLoad()`
+     - Create the HTML string.
+       - (Code D34-03-Create_a_Web_page)
+   - _`ViewController.swift`_  `tableView(..., cellForRowAt indexPath: IndexPath)`
+     - Load the HTML string
+       - (Code D34-03-Load_a_Web_page)
+4. Add a second _view controller_ into our _tab bar_
+   - _`AppDelegate.swift`_ `application(..., didFinishLaunchingWithOptions launchOptions: ...)`
