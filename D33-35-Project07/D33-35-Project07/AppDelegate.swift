@@ -8,13 +8,17 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    /// Tells the delegate that the launch process is almost done, and the app is almost ready to run.
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         if let tabBarController = window?.rootViewController as? UITabBarController {
@@ -25,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 withIdentifier: "NavController"
             )
             
+            // UITabBarItem.SystemItem constants: .more, .favorites, .featured, .topRated, .recents, .contacts, history, .bookmarks, .search, .downloads, .mostRecent, .mostViewed
             vc.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated,
                                          tag: 1)
             
@@ -55,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
