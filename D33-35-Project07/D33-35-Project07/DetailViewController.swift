@@ -39,9 +39,17 @@ class DetailViewController: UIViewController {
         <html>
           <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <style> body { font-size: 150%; } </style>
+            <style>
+              body { font-family: helvetica neue; font-size: 130%; }
+              h1 {
+                font-size: 30px;
+                text-transform: uppercase;
+              }
+            </style>
           </head>
           <body>
+          Petitions: \(detailItem.signatureCount) </br>
+            <h1>\(detailItem.title)</h1>
             \(detailItem.body)
           </body>
         </html>
@@ -52,3 +60,6 @@ class DetailViewController: UIViewController {
     }
     
 }
+
+
+// font: -apple-system-headline;
