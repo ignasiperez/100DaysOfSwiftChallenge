@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     //  ************************************************************
     //  MARK: - Instance properties
     //
+    
     var webView: WKWebView!
     var detailItem: Petition?
     
@@ -34,7 +35,7 @@ class DetailViewController: UIViewController {
 
         guard let detailItem = detailItem else { return }
         
-        // D34-03-Create_a_Web_page
+        // D34-03-Create_HTML_content
         let html = """
         <html>
           <head>
@@ -56,10 +57,6 @@ class DetailViewController: UIViewController {
         """
         
         webView.loadHTMLString(html, baseURL: nil)
-
     }
     
 }
-
-
-// font: -apple-system-headline;

@@ -102,7 +102,7 @@ class ViewController: UITableViewController {
     //
     ///  Tells the delegate that the specified row is now selected.
     //
-    // D34-03-Load_a_Web_page
+    // D34-03-Display_custom_HTML_content
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
@@ -118,7 +118,6 @@ class ViewController: UITableViewController {
     //  MARK: - Instance methods
     //
     
-    
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem =
             UIBarButtonItem(title: "Credits",
@@ -132,7 +131,6 @@ class ViewController: UITableViewController {
                             target: self,
                             action: #selector(filterTapped))
     }
-    
     
     
     // D33-05-Parse_the_Whitehouse Petitions

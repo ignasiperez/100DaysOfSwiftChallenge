@@ -72,19 +72,36 @@ We want to modify this so that the cells print out the title value of our Petiti
      - New > File > iOS > Cocoa Touch Class
        - Name: **_DetailViewController_**
        - Subclass Of: **_UIViewController_**
-2. Make the _detail view controller_ to become a web browser.
+2. Make the _detail view controller_ displays HTML content.
    - _`DetailViewController.swift`_
      - Import **`WebKit`** Framework
      - Declare `detailItem` instance property of type `Petition`
    - _`DetailViewController.swift`_ `loadView()`
      - Make our _view_ (the root view of the _view controller_) the _web view_.
        - (Code D34-02-Make_our_view_the_web_view)
-3. Load a custom HTML string to our webview when user selects a Whitehouse petition from the lies.
+3. Display a custom HTML string in our webview when user selects a Whitehouse petition from the list.
    - _`DetailViewController.swift`_ `viewDidLoad()`
      - Create the HTML string.
-       - (Code D34-03-Create_a_Web_page)
-   - _`ViewController.swift`_  `tableView(..., cellForRowAt indexPath: IndexPath)`
-     - Load the HTML string
-       - (Code D34-03-Load_a_Web_page)
+       - (Code D34-03-Create_HTML_content)
+   - _`ViewController.swift`_  `tableView(..., didSelectRowAt indexPath: IndexPath)`
+     - Display the custom HTML string
+       - (Code D34-03-Display_custom_HTML_content)
 4. Add a second _view controller_ into our _tab bar_
+
+     - ff
+
+## INSTRUCTIONS [Hacking with Swift Day 35](https://www.hackingwithswift.com/100/35)
+
+1. Create a second _view controller_ that will show popular petitions.
    - _`AppDelegate.swift`_ `application(..., didFinishLaunchingWithOptions launchOptions: ...)`
+     - (Code D35-01-Insert_a_second_view_controller_with_popular_petitions_into_our_tab_bar)
+2. Add error messages
+   - _`ViewController.swift`_  `showError()`
+
+## INSTRUCTIONS [Hacking with Swift Day 35 Challenges](https://www.hackingwithswift.com/read/7/6/wrap-up)
+
+1. Add a Credits button to the top-right corner using UIBarButtonItem. When this is tapped, show an alert telling users the data comes from the We The People API of the Whitehouse.
+2. Let users filter the petitions they see. 
+   - This involves creating a second array of filtered items that contains only petitions matching a string the user entered.
+   - Use a UIAlertController with a text field to let them enter that string. This is a tough one, so I’ve included some hints below if you get stuck.
+3. Experiment with the HTML – this isn’t a HTML or CSS tutorial, but you can find lots of resources online to give you enough knowledge to tinker with the layout a little.
