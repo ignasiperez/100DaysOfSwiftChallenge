@@ -33,3 +33,9 @@
 | Day(s) | Challenge / Milestone | Swift Language & Frameworks |
 | :-----: | :--------------: | :-------------------------------------------- |
 | 32-32 | [Milestone-P04-06](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D32-32-Milestone-P04-06) <br/> Shopping List| Days 24-31 |
+
+## Days 33-40: Codable, buttons and GDC
+
+| Day(s) | Challenge / Milestone | Swift Language & Frameworks |
+| :-----: | :--------------: | :-------------------------- |
+| 33-35 | [Project07](https://github.com/ignasiperez/100DaysOfSwiftChallenge/tree/master/D33-35-Project07) <br/> Whitehouse Petitions | **JSON**. <br/> **Foundation**: **`Codable`**, **`Data`** <br/> **UIKit**: **`UIStoryboard`** **`UITabBarController`**, **`UITableCell .detailTextLabel`** <br/> **WebKit**: **`WKWebView .loadHTMLString(_:·baseURL:)`**|
