@@ -19,6 +19,15 @@ class ViewController: UIViewController {
     var currentAnswer: UITextField!
     var scoreLabel: UILabel!
     var letterButtons = [UIButton]()
+    
+    // buttons that are currently being used to spell an answer
+    var activatedButtons = [UIButton]()
+    // possible solutions
+    var solutions = [String]()
+    
+    var score = 0
+    var level = 1
+
 
     
     //  ************************************************************
@@ -44,7 +53,10 @@ class ViewController: UIViewController {
         cluesLabel.text = "CLUES"
         cluesLabel.numberOfLines = 0
         
-//        cluesLabel.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
+        cluesLabel.setContentHuggingPriority(
+            UILayoutPriority(1),
+            for: .vertical
+        )
         
         view.addSubview(cluesLabel)
 
@@ -56,7 +68,10 @@ class ViewController: UIViewController {
         answersLabel.numberOfLines = 0
         answersLabel.textAlignment = .right
         
-//        answersLabel.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
+        answersLabel.setContentHuggingPriority(
+            UILayoutPriority(1),
+            for: .vertical
+        )
         
         view.addSubview(answersLabel)
         
@@ -73,11 +88,26 @@ class ViewController: UIViewController {
         let submit = UIButton(type: .system)
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("SUBMIT", for: .normal)
+        
+        // D37-04-Add_Observer_method_that_is_called_when_user_taps_submit_button
+        submit.addTarget(
+            self,
+            action: #selector(submitTapped),
+            for: .touchUpInside
+        )
+        
         view.addSubview(submit)
         
         let clear = UIButton(type: .system)
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("CLEAR", for: .normal)
+        
+        //D37-04-Add_Observer_method_that_is_called_when_user_taps_clear_button
+        clear.addTarget(
+            self,
+            action: #selector(clearTapped),
+            for: .touchUpInside
+        )
         view.addSubview(clear)
         
         
@@ -179,16 +209,28 @@ class ViewController: UIViewController {
                 equalToConstant: 44
             ),
 
-//            buttonsView.widthAnchor.constraint(
-//                equalToConstant: 750),
-//            buttonsView.heightAnchor.constraint(
-//                equalToConstant: 320),
-//            buttonsView.centerXAnchor.constraint(
-//                equalTo: view.centerXAnchor),
-//            buttonsView.topAnchor.constraint(
-//                equalTo: submit.bottomAnchor, constant: 20),
-//            buttonsView.bottomAnchor.constraint(
-//                equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
+            
+            buttonsView.widthAnchor.constraint(
+                equalToConstant: 750
+            ),
+            
+            buttonsView.heightAnchor.constraint(
+                equalToConstant: 320
+            ),
+            
+            buttonsView.centerXAnchor.constraint(
+                equalTo: view.centerXAnchor
+            ),
+            
+            buttonsView.topAnchor.constraint(
+                equalTo: submit.bottomAnchor,
+                constant: 20
+            ),
+            
+            buttonsView.bottomAnchor.constraint(
+                equalTo: view.layoutMarginsGuide.bottomAnchor,
+                constant: -20
+            )
         ])
         
         
@@ -206,8 +248,21 @@ class ViewController: UIViewController {
                 // give the button some temporary text so we can see it on-screen
                 letterButton.setTitle("WWW", for: .normal)
                 
+                // D37-04-Add_Observer_method_called_when_user_taps_letterButton)
+                letterButton.addTarget(
+                    self,
+                    action: #selector(letterTapped),
+                    for: .touchUpInside
+                )
+
                 // calculate the frame of this button using its column and row
-                let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
+                let frame = CGRect(
+                    x: col * width,
+                    y: row * height,
+                    width: width,
+                    height: height
+                )
+                
                 letterButton.frame = frame
                 
                 // add it to the buttons view
@@ -228,8 +283,73 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        loadLevel()
+    }
+    
+    
+    //  ************************************************************
+    //  MARK: - Instance methods
+    //
+    
+    @objc func letterTapped(_ sender: UIButton) {
+    }
+    
+    @objc func submitTapped(_ sender: UIButton) {
+    }
+    
+    @objc func clearTapped(_ sender: UIButton) {
+    }
+    
+    
+    func loadLevel() {
+        print("ViewController loadLevel ")
+        var clueString = ""
+        var solutionString = ""
+        var letterBits = [String]()
+        
+        if let levelFileURL = Bundle.main.url(forResource: "level\(level)", withExtension: "txt") {
+            if let levelContents = try? String(contentsOf: levelFileURL) {
+                var lines = levelContents.components(separatedBy: "\n")
+                lines.shuffle()
+                
+                for (index, line) in lines.enumerated() {
+                    let parts = line.components(separatedBy: ": ")
+                    print("\n- parts: \(parts) ")
+                    let answer = parts[0]
+                    print("- answer: \(answer) ")
+                    let clue = parts[1]
+                    print("- clue: \(clue) ")
+                    
+                    clueString += "\(index + 1). \(clue)\n"
+                    print("- clueString:\n\(clueString) ")
+                    
+                    let solutionWord = answer.replacingOccurrences(of: "|", with: "")
+                    solutionString += "\(solutionWord.count) letters\n"
+                    print("- solutionString:\n\(solutionString) ")
+                    solutions.append(solutionWord)
+                    
+                    let bits = answer.components(separatedBy: "|")
+                    letterBits += bits
+                    print("- letterBits:\n\(letterBits) ")
+                }
+            }
+        }
+        
+        cluesLabel.text = clueString.trimmingCharacters(
+            in: .whitespacesAndNewlines)
+        
+        answersLabel.text = solutionString.trimmingCharacters(
+            in: .whitespacesAndNewlines)
+        
+        letterBits.shuffle()
+        
+        if letterBits.count == letterButtons.count {
+            for i in 0 ..< letterButtons.count {
+                letterButtons[i].setTitle(letterBits[i], for: .normal)
+            }
+        }
+
     }
 
 }
-
