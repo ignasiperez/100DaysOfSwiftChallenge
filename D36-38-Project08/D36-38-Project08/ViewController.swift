@@ -22,14 +22,20 @@ class ViewController: UIViewController {
     
     // buttons that are currently being used to spell an answer
     var activatedButtons = [UIButton]()
+    
     // possible solutions
     var solutions = [String]()
     
-    var score = 0
+    // D37-06-Update_score_label_whenever_score_value_changes
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+
     var level = 1
 
 
-    
     //  ************************************************************
     //  MARK: - Override UIViewController methods
     //
@@ -89,7 +95,7 @@ class ViewController: UIViewController {
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("SUBMIT", for: .normal)
         
-        // D37-04-Add_Observer_method_that_is_called_when_user_taps_submit_button
+        // D37-03-Add_Observer_method_that_is_called_when_user_taps_submit_button
         submit.addTarget(
             self,
             action: #selector(submitTapped),
@@ -102,7 +108,7 @@ class ViewController: UIViewController {
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("CLEAR", for: .normal)
         
-        //D37-04-Add_Observer_method_that_is_called_when_user_taps_clear_button
+        //D37-03-Add_Observer_method_that_is_called_when_user_taps_clear_button
         clear.addTarget(
             self,
             action: #selector(clearTapped),
@@ -248,7 +254,7 @@ class ViewController: UIViewController {
                 // give the button some temporary text so we can see it on-screen
                 letterButton.setTitle("WWW", for: .normal)
                 
-                // D37-04-Add_Observer_method_called_when_user_taps_letterButton)
+                // D37-03-Add_Observer_method_called_when_user_taps_letterButton)
                 letterButton.addTarget(
                     self,
                     action: #selector(letterTapped),
@@ -276,6 +282,7 @@ class ViewController: UIViewController {
         scoreLabel.backgroundColor = .gray
         cluesLabel.backgroundColor = .red
         answersLabel.backgroundColor = .blue
+        currentAnswer.backgroundColor = .yellow
         submit.backgroundColor = .lightGray
         clear.backgroundColor = .lightGray
         buttonsView.backgroundColor = .green
@@ -292,16 +299,55 @@ class ViewController: UIViewController {
     //  MARK: - Instance methods
     //
     
+    // D37-05-Handle_letter_buttons_being_tapped
     @objc func letterTapped(_ sender: UIButton) {
+        guard let buttonTitle = sender.titleLabel?.text else { return }
+        currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
+        activatedButtons.append(sender)
+        sender.isHidden = true
     }
+    
     
     @objc func submitTapped(_ sender: UIButton) {
+        print("\nViewController submitTapped(_ sender: UIButton) ")
+        
+        guard let answerText = currentAnswer.text else { return }
+        print("- answerText: \(answerText)")
+        
+        if let solutionPosition = solutions.firstIndex(of: answerText) {
+            activatedButtons.removeAll()
+            
+            var splitAnswers = answersLabel.text?.components(separatedBy: "\n")
+            splitAnswers?[solutionPosition] = answerText
+            answersLabel.text = splitAnswers?.joined(separator: "\n")
+            print("- answersLabel.text: \(String(describing: answersLabel.text))")
+            
+            currentAnswer.text = ""
+            score += 1
+            
+            if score % 7 == 0 {
+                let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
+                present(ac, animated: true)
+            }
+        }
+
     }
     
+    
+    // D37-05-Handle_current_word_being_cleared
     @objc func clearTapped(_ sender: UIButton) {
+        currentAnswer.text = ""
+        
+        for btn in activatedButtons {
+            btn.isHidden = false
+        }
+        
+        activatedButtons.removeAll()
     }
     
     
+    // D37-04-Load_and_parse_level_text_file_into_cluesLabel_and_answersLabel
     func loadLevel() {
         print("ViewController loadLevel ")
         var clueString = ""
@@ -322,11 +368,11 @@ class ViewController: UIViewController {
                     print("- clue: \(clue) ")
                     
                     clueString += "\(index + 1). \(clue)\n"
-                    print("- clueString:\n\(clueString) ")
+                    print("- clueString - cluesLabel:\n\(clueString) ")
                     
                     let solutionWord = answer.replacingOccurrences(of: "|", with: "")
                     solutionString += "\(solutionWord.count) letters\n"
-                    print("- solutionString:\n\(solutionString) ")
+                    print("- solutionString - answersLabel:\n\(solutionString) ")
                     solutions.append(solutionWord)
                     
                     let bits = answer.components(separatedBy: "|")
@@ -336,6 +382,8 @@ class ViewController: UIViewController {
             }
         }
         
+        
+        // D37-05-Randomly_assign_letter_groups_to_buttons
         cluesLabel.text = clueString.trimmingCharacters(
             in: .whitespacesAndNewlines)
         
@@ -349,7 +397,18 @@ class ViewController: UIViewController {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
         }
-
+    }
+    
+    
+    func levelUp(action: UIAlertAction) {
+        level += 1
+        solutions.removeAll(keepingCapacity: true)
+        
+        loadLevel()
+        
+        for btn in letterButtons {
+            btn.isHidden = false
+        }
     }
 
 }
