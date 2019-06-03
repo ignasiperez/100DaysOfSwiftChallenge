@@ -29,11 +29,18 @@ class ViewController: UIViewController {
     // D37-06-Update_score_label_whenever_score_value_changes
     var score = 0 {
         didSet {
-            scoreLabel.text = "Score: \(score)"
+            if score >= 0 {
+                scoreLabel.text = "Score: \(score)"
+            }
+            else {
+                scoreLabel.text = "Score: 0"
+            }
         }
     }
 
     var level = 1
+    
+    var correctAnswers = 0
 
 
     //  ************************************************************
@@ -42,22 +49,25 @@ class ViewController: UIViewController {
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         
         scoreLabel = UILabel()
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // enum NSTextAligntment contstants: .left .right .center .justify .natural
         scoreLabel.textAlignment = .right
+        scoreLabel.font = UIFont.systemFont(ofSize: 26)
         scoreLabel.text = "Score: 0"
+        scoreLabel.textColor = .lightGray
         view.addSubview(scoreLabel)
         
         
         cluesLabel = UILabel()
         cluesLabel.translatesAutoresizingMaskIntoConstraints = false
-        cluesLabel.font = UIFont.systemFont(ofSize: 24)
+        cluesLabel.font = UIFont.systemFont(ofSize: 26)
         cluesLabel.text = "CLUES"
         cluesLabel.numberOfLines = 0
+        cluesLabel.textColor = .orange
         
         cluesLabel.setContentHuggingPriority(
             UILayoutPriority(1),
@@ -73,6 +83,7 @@ class ViewController: UIViewController {
         answersLabel.text = "ANSWERS"
         answersLabel.numberOfLines = 0
         answersLabel.textAlignment = .right
+        answersLabel.textColor = .green
         
         answersLabel.setContentHuggingPriority(
             UILayoutPriority(1),
@@ -84,10 +95,30 @@ class ViewController: UIViewController {
         
         currentAnswer = UITextField()
         currentAnswer.translatesAutoresizingMaskIntoConstraints = false
-        currentAnswer.placeholder = "Tap letters to guess"
         currentAnswer.textAlignment = .center
         currentAnswer.font = UIFont.systemFont(ofSize: 44)
         currentAnswer.isUserInteractionEnabled = false
+        currentAnswer.textColor = .green
+//        currentAnswer.placeholder = "Tap letters to guess"
+        
+        let textPlaceholder  = "Tap letters to guess" // PlaceHolderText
+
+        let myPlaceholder = NSMutableAttributedString(
+            string: textPlaceholder,
+            attributes: [NSAttributedString.Key.font: UIFont(
+                name: "System Font",
+                size: 54.0)!]
+        ) // Font
+
+        myPlaceholder.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.lightGray,
+            range:NSRange(location:0,
+                          length: textPlaceholder.count)
+        ) // Color
+        
+        currentAnswer.attributedPlaceholder = myPlaceholder
+        
         view.addSubview(currentAnswer)
         
         
@@ -180,7 +211,7 @@ class ViewController: UIViewController {
             
             currentAnswer.widthAnchor.constraint(
                 equalTo: view.widthAnchor,
-                multiplier: 0.5
+                multiplier: 0.7
             ),
             
             currentAnswer.topAnchor.constraint(
@@ -279,13 +310,14 @@ class ViewController: UIViewController {
             }
         }
         
-        scoreLabel.backgroundColor = .gray
-        cluesLabel.backgroundColor = .red
-        answersLabel.backgroundColor = .blue
-        currentAnswer.backgroundColor = .yellow
-        submit.backgroundColor = .lightGray
-        clear.backgroundColor = .lightGray
-        buttonsView.backgroundColor = .green
+//        scoreLabel.backgroundColor = .gray
+//        cluesLabel.backgroundColor = .red
+//        answersLabel.backgroundColor = .blue
+//        currentAnswer.backgroundColor = .yellow
+//        submit.backgroundColor = .lightGray
+//        clear.backgroundColor = .lightGray
+        buttonsView.layer.borderWidth = 1
+        buttonsView.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     override func viewDidLoad() {
@@ -302,8 +334,10 @@ class ViewController: UIViewController {
     // D37-05-Handle_letter_buttons_being_tapped
     @objc func letterTapped(_ sender: UIButton) {
         guard let buttonTitle = sender.titleLabel?.text else { return }
+        
         currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
         activatedButtons.append(sender)
+        printConsoleActivatedButtons()
         sender.isHidden = true
     }
     
@@ -323,20 +357,54 @@ class ViewController: UIViewController {
             print("- answersLabel.text: \(String(describing: answersLabel.text))")
             
             currentAnswer.text = ""
+            correctAnswers += 1
             score += 1
             
-            if score % 7 == 0 {
-                let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
+            if correctAnswers % 7 == 0 {
+                let ac = UIAlertController(
+                    title: "Well done!",
+                    message: "Are you ready for the next level?",
+                    preferredStyle: .alert
+                )
+                
+                ac.addAction(UIAlertAction(title: "Let's go!",
+                                           style: .default,
+                                           handler: levelUp)
+                )
+                
                 present(ac, animated: true)
             }
         }
-
+        else {
+            print("- Incorrect")
+            
+            let ac = UIAlertController(
+                title: "Incorrect",
+                message: "\"\(answerText)\" does not match any expected response.",
+                preferredStyle: .alert
+            )
+            
+            ac.addAction(UIAlertAction(
+                title: "Continue",
+                style: .default,
+                handler: { [weak self] _ in
+                    self?.resetActivatedButtons()
+                    self?.score -= 1
+                }
+            ))
+            
+            present(ac, animated: true)
+        }
     }
     
     
     // D37-05-Handle_current_word_being_cleared
-    @objc func clearTapped(_ sender: UIButton) {
+    @objc func clearTapped() {
+        resetActivatedButtons()
+    }
+    
+    
+    private func resetActivatedButtons() {
         currentAnswer.text = ""
         
         for btn in activatedButtons {
@@ -401,6 +469,7 @@ class ViewController: UIViewController {
     
     
     func levelUp(action: UIAlertAction) {
+        score = 0
         level += 1
         solutions.removeAll(keepingCapacity: true)
         
@@ -410,5 +479,26 @@ class ViewController: UIViewController {
             btn.isHidden = false
         }
     }
+    
+    
+    private func wrongAnswer(action: UIAlertAction! = nil ) {
+        print("\nViewController wrongAnswer(action: UIAlertAction! = nil )")
+        
+        activatedButtons.removeAll()
+        
+        currentAnswer.text = ""
+        
+        correctAnswers += 1
+        score -= 1
+    }
+    
+    
+    private func printConsoleActivatedButtons() {
+        print("\n")
+        for button in activatedButtons {
+            print("- activatedButtons: \(String(describing: button.titleLabel?.text))")
+        }
+    }
 
 }
+

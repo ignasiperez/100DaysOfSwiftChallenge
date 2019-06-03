@@ -59,3 +59,11 @@ On this App users see a list of hints and an array of buttons with different let
    - Update the score label whenever the score value changes.
      - _`ViewController.swift`_
         - (Code D37-06-Update_score_label_whenever_score_value_changes)
+
+## INSTRUCTIONS [Hacking with Swift Day 38 Challenges](https://www.hackingwithswift.com/read/8/6/wrap-up)
+
+1. Use the techniques you learned in project 2 to draw a thin gray line around the buttons view, to make it stand out from the rest of the UI.
+2. If the user enters an incorrect guess, show an alert telling them they are wrong.
+   - You’ll need to extend the _`submitTapped()`_ method so that if `firstIndex(of:)`failed to find the guess you show the alert.
+3. Try making the game also deduct points if the player makes an incorrect guess.
+   - Think about how you can move to the next level – we can’t use a simple division remainder on the player’s score any more, because they might have lost some points.
